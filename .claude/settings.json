@@ -1,0 +1,34 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm init *)",
+      "Bash(node shots.mjs)",
+      "Bash(npx oxlint *)",
+      "Bash(lsof -ti:5183 -sTCP:LISTEN)",
+      "Bash(xargs -r kill)",
+      "Bash(xargs -0 sed -i '' -e 's/ZIA/GIA/g' -e 's/ziaeducare/giaeducare/g')",
+      "Bash(echo \"remaining count: $?\")",
+      "Bash(find /private/var/folders -maxdepth 6 -iname \"*.png\" -mmin -180 2>/dev/null | grep -vi \"com.apple\\\\|CoreSimulator\\\\|Xcode\" | head -40)",
+      "Read(//private/var/folders/**)",
+      "Bash(find \"$HOME/Library/Application Support/Code\" -maxdepth 6 -iname \"*.png\" -mmin -240 2>/dev/null | grep -iv \"cache\\\\|GPUCache\\\\|Service Worker\" | head -40 *)",
+      "Read(//Users/ritikkumar/Library/Application Support/Code/**)",
+      "Read(//Users/ritikkumar/Library/Application Support/Code/User/workspaceStorage/**)",
+      "Bash(timeout 20 bash -c 'until curl -sf http://localhost:5183/ >/dev/null; do sleep 0.5; done')",
+      "Bash(break)",
+      "Bash(cp \"/Users/ritikkumar/Downloads/WhatsApp Image 2026-09-02 at 23.26.02.jpeg\" \"/Users/ritikkumar/Documents/ZIA Educare/public/logo.jpg\")",
+      "Bash(cp \"/Users/ritikkumar/Downloads/WhatsApp Image 2026-09-02 at 23.26.02.jpeg\" \"/Users/ritikkumar/Documents/ZIA Educare/src/assets/logo.jpg\")",
+      "Bash(python3 -m pip install --quiet --user pillow)",
+      "Bash(SCRATCH=\"/private/tmp/claude-501/-Users-ritikkumar-Documents-ZIA-Educare/7a99b71e-0100-4d1c-871c-dd07f1aef749/scratchpad\" *)",
+      "Bash(node -e \"const l = require\\('lucide-react'\\); console.log\\(['Instagram','Linkedin','Youtube','MessageCircle','Facebook','Twitter'].map\\(n => n + ': ' + \\(typeof l[n]\\)\\).join\\('\\\\n'\\)\\)\")",
+      "Bash(curl -sI http://localhost:5183/logo.jpg)",
+      "Bash(node verify.mjs)",
+      "Bash(node verify2.mjs)",
+      "Bash(node crop.mjs)",
+      "Bash(node debugh3b.mjs)",
+      "Bash(node crop2.mjs)"
+    ],
+    "additionalDirectories": [
+      "/private/tmp/claude-501/-Users-ritikkumar-Documents-ZIA-Educare/7a99b71e-0100-4d1c-871c-dd07f1aef749/scratchpad"
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find ~/Downloads ~/Desktop -maxdepth 2 \\\\\\( -iname \"*logo*\" -o -iname \"*gia*\" -o -iname \"*educare*\" \\\\\\) 2>/dev/null)",
+      "Read(//Users/ritikkumar/Downloads/**)",
+      "Bash(npm create *)",
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(nohup npm run dev -- --port 5183)",
+      "Bash(disown)",
+      "Read(//tmp/**)",
+      "Bash(chromium-cli --help)",
+      "Read(//Users/ritikkumar/Library/Caches/**)",
+      "Bash(npx --yes playwright --version)",
+      "Bash(curl -sf http://localhost:5183/)",
+      "Bash(node /private/tmp/claude-501/-Users-ritikkumar-Documents-ZIA-Educare/7a99b71e-0100-4d1c-871c-dd07f1aef749/scratchpad/shots.mjs)"
+    ]
+  }
+}

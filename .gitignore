@@ -1,0 +1,22 @@
+# dependencies
+node_modules
+*/node_modules
+
+# builds
+dist
+*/dist
+
+# env
+.env
+.env.local
+*/.env
+!.env.example
+!*/.env.example
+
+# backend uploads (keep the folder, not the files)
+backend/uploads/*
+!backend/uploads/.gitkeep
+
+# logs / os
+*.log
+.DS_Store
