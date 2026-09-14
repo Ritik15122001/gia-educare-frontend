@@ -6,7 +6,7 @@ export const destinationsPreview = [
     tag: 'STEM OPT 3 yrs',
     bg: 'linear-gradient(155deg,#2C4A7C,#0C1E3B)',
     blurb: 'Research funding, assistantships and the widest choice of specialisations anywhere.',
-    meta: ['Fall / Spring', '$25k–55k / yr', 'F-1 visa'],
+    meta: ['Fall / Spring', '₹24 – 53 Lakh / yr', 'F-1 visa'],
   },
   {
     id: 'uk',
@@ -15,7 +15,7 @@ export const destinationsPreview = [
     tag: '1-year masters',
     bg: 'linear-gradient(155deg,#7C2C3B,#2B0E17)',
     blurb: 'Finish a masters in twelve months and stay two more years on the Graduate Route.',
-    meta: ['Sep / Jan', '£14k–30k / yr', 'Student visa'],
+    meta: ['Sep / Jan', '₹18 – 39 Lakh / yr', 'Student visa'],
   },
   {
     id: 'canada',
@@ -24,7 +24,7 @@ export const destinationsPreview = [
     tag: 'PR pathway',
     bg: 'linear-gradient(155deg,#8A3A2E,#2A0F0A)',
     blurb: 'Affordable tuition, a 3-year post-study work permit and a clear route to residency.',
-    meta: ['Sep / Jan / May', 'C$18k–32k / yr', 'Study permit'],
+    meta: ['Sep / Jan / May', '₹12 – 22 Lakh / yr', 'Study permit'],
   },
   {
     id: 'australia',
@@ -33,7 +33,7 @@ export const destinationsPreview = [
     tag: 'Work while you study',
     bg: 'linear-gradient(155deg,#1F6B63,#07211F)',
     blurb: 'Strong nursing, IT and engineering pipelines with 48-hour fortnightly work rights.',
-    meta: ['Feb / Jul', 'A$22k–45k / yr', 'Subclass 500'],
+    meta: ['Feb / Jul', '₹15 – 31 Lakh / yr', 'Subclass 500'],
   },
   {
     id: 'germany',
@@ -42,7 +42,7 @@ export const destinationsPreview = [
     tag: 'Low / no tuition',
     bg: 'linear-gradient(155deg,#3C3F8F,#111233)',
     blurb: "Public universities with negligible tuition and Europe's strongest engineering job market.",
-    meta: ['Oct / Apr', '€0–3k / yr', 'Blocked account'],
+    meta: ['Oct / Apr', '₹0 – 3.5 Lakh / yr', 'Blocked account'],
   },
   {
     id: 'ireland',
@@ -51,20 +51,22 @@ export const destinationsPreview = [
     tag: 'Tech hub',
     bg: 'linear-gradient(155deg,#1C5C8A,#061A2A)',
     blurb: 'European HQs for the biggest tech and pharma firms, plus a 2-year stay-back option.',
-    meta: ['Sep / Jan', '€12k–25k / yr', 'Stamp 2'],
+    meta: ['Sep / Jan', '₹13 – 28 Lakh / yr', 'Stamp 2'],
   },
 ];
 
 export const destinationsDetailed = [
   {
     id: 'usa',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/New_York_City_skyline_from_ferry.jpg/960px-New_York_City_skyline_from_ferry.jpg',
     name: 'United States',
     flag: '🇺🇸',
     bg: 'linear-gradient(150deg,#2C4A7C,#0C1E3B)',
     description:
       'The deepest pool of specialisations, research funding and assistantships — and the biggest range of costs, from state schools to the Ivies.',
     facts: [
-      { label: 'Tuition / year', value: '$25,000 – $55,000' },
+      { label: 'Tuition / year', value: '₹24 – 53 Lakh' },
+      { label: 'Living cost / year', value: '₹11 – 19 Lakh' },
       { label: 'Intakes', value: 'Fall · Spring' },
       { label: 'Post-study work', value: '1 yr OPT · 3 yrs STEM' },
       { label: 'Tests', value: 'IELTS/TOEFL + GRE/GMAT' },
@@ -73,13 +75,15 @@ export const destinationsDetailed = [
   },
   {
     id: 'uk',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/London_Tower_Bridge_%289816168804%29.jpg/960px-London_Tower_Bridge_%289816168804%29.jpg',
     name: 'United Kingdom',
     flag: '🇬🇧',
     bg: 'linear-gradient(150deg,#7C2C3B,#2B0E17)',
     description:
       'One-year masters means one year of tuition and living cost. Fastest route from application to a foreign degree on your CV.',
     facts: [
-      { label: 'Tuition / year', value: '£14,000 – £30,000' },
+      { label: 'Tuition / year', value: '₹18 – 39 Lakh' },
+      { label: 'Living cost / year', value: '₹13 – 19 Lakh' },
       { label: 'Intakes', value: 'September · January' },
       { label: 'Post-study work', value: '2 yrs Graduate Route' },
       { label: 'Tests', value: 'IELTS UKVI' },
@@ -88,13 +92,15 @@ export const destinationsDetailed = [
   },
   {
     id: 'canada',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Toronto_Skyline_viewed_from_Centre_Island.jpg/960px-Toronto_Skyline_viewed_from_Centre_Island.jpg',
     name: 'Canada',
     flag: '🇨🇦',
     bg: 'linear-gradient(150deg,#8A3A2E,#2A0F0A)',
     description:
       'The most balanced option — moderate fees, three intakes a year, a long work permit and the clearest permanent-residency pathway.',
     facts: [
-      { label: 'Tuition / year', value: 'C$18,000 – C$32,000' },
+      { label: 'Tuition / year', value: '₹12 – 22 Lakh' },
+      { label: 'Living cost / year', value: '₹8.5 – 12 Lakh' },
       { label: 'Intakes', value: 'Sep · Jan · May' },
       { label: 'Post-study work', value: 'Up to 3 yrs PGWP' },
       { label: 'Tests', value: 'IELTS / PTE' },
@@ -103,13 +109,15 @@ export const destinationsDetailed = [
   },
   {
     id: 'australia',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/The_Sydney_Opera_House._%2810531420586%29.jpg/960px-The_Sydney_Opera_House._%2810531420586%29.jpg',
     name: 'Australia',
     flag: '🇦🇺',
     bg: 'linear-gradient(150deg,#1F6B63,#07211F)',
     description:
       'Strong for nursing, IT, engineering and hospitality, with generous part-time work rights and a skilled-migration points system.',
     facts: [
-      { label: 'Tuition / year', value: 'A$22,000 – A$45,000' },
+      { label: 'Tuition / year', value: '₹15 – 31 Lakh' },
+      { label: 'Living cost / year', value: '₹14 – 18 Lakh' },
       { label: 'Intakes', value: 'February · July' },
       { label: 'Post-study work', value: '2 – 4 yrs subclass 485' },
       { label: 'Tests', value: 'IELTS / PTE' },
@@ -118,13 +126,15 @@ export const destinationsDetailed = [
   },
   {
     id: 'germany',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Brandenburg_gate_Berlin_with_Christmas_tree_at_night_2022-12-09_03.jpg/960px-Brandenburg_gate_Berlin_with_Christmas_tree_at_night_2022-12-09_03.jpg',
     name: 'Germany',
     flag: '🇩🇪',
     bg: 'linear-gradient(150deg,#3C3F8F,#111233)',
     description:
       'Public universities charge little or no tuition. You budget for living costs and a blocked account, not for fees.',
     facts: [
-      { label: 'Tuition / year', value: '€0 – €3,000' },
+      { label: 'Tuition / year', value: '₹0 – 3.5 Lakh' },
+      { label: 'Living cost / year', value: '₹12 – 14 Lakh' },
       { label: 'Intakes', value: 'October · April' },
       { label: 'Post-study work', value: '18-month job-seeker visa' },
       { label: 'Tests', value: 'IELTS + APS · German A1–B2' },
@@ -133,13 +143,15 @@ export const destinationsDetailed = [
   },
   {
     id: 'ireland',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Cliffs_Of_Moher_Doolin_2009_%28155299131%29.jpeg/960px-Cliffs_Of_Moher_Doolin_2009_%28155299131%29.jpeg',
     name: 'Ireland',
     flag: '🇮🇪',
     bg: 'linear-gradient(150deg,#1C5C8A,#061A2A)',
     description:
       'European headquarters for most large tech and pharma companies, English-taught, and a two-year stay-back for masters graduates.',
     facts: [
-      { label: 'Tuition / year', value: '€12,000 – €25,000' },
+      { label: 'Tuition / year', value: '₹13 – 28 Lakh' },
+      { label: 'Living cost / year', value: '₹11 – 16 Lakh' },
       { label: 'Intakes', value: 'September · January' },
       { label: 'Post-study work', value: '2 yrs Stamp 1G' },
       { label: 'Tests', value: 'IELTS / PTE' },
@@ -148,13 +160,15 @@ export const destinationsDetailed = [
   },
   {
     id: 'new-zealand',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Mitre_Peak_of_Milford_Sound%2C_New_Zealand%3B_February_2015.jpg/960px-Mitre_Peak_of_Milford_Sound%2C_New_Zealand%3B_February_2015.jpg',
     name: 'New Zealand',
     flag: '🇳🇿',
     bg: 'linear-gradient(150deg,#B08234,#3B2708)',
     description:
       'Small cohorts, high quality of life and open work rights for partners of postgraduate students.',
     facts: [
-      { label: 'Tuition / year', value: 'NZ$26,000 – NZ$40,000' },
+      { label: 'Tuition / year', value: '₹14 – 22 Lakh' },
+      { label: 'Living cost / year', value: '₹9 – 12 Lakh' },
       { label: 'Intakes', value: 'February · July' },
       { label: 'Post-study work', value: 'Up to 3 yrs' },
       { label: 'Tests', value: 'IELTS / PTE' },
@@ -162,14 +176,16 @@ export const destinationsDetailed = [
     tags: ['Partner work visa', 'Agriculture', 'Small classes'],
   },
   {
-    id: 'uae-sg',
+    id: 'dubai-singapore',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Marina_Bay_skyline_sunset_%28Unsplash%29.jpg/960px-Marina_Bay_skyline_sunset_%28Unsplash%29.jpg',
     name: 'Dubai & Singapore',
     flag: '🇦🇪',
     bg: 'linear-gradient(150deg,#5B3E8F,#1A1030)',
     description:
       'Global campuses of Western universities, two to five hours from home, with strong finance, logistics and hospitality placements.',
     facts: [
-      { label: 'Tuition / year', value: '$14,000 – $30,000' },
+      { label: 'Tuition / year', value: '₹13 – 29 Lakh' },
+      { label: 'Living cost / year', value: '₹8.5 – 15 Lakh' },
       { label: 'Intakes', value: 'Sep · Jan · rolling' },
       { label: 'Post-study work', value: 'Employer-sponsored' },
       { label: 'Tests', value: 'IELTS (often waived)' },
@@ -179,12 +195,12 @@ export const destinationsDetailed = [
 ];
 
 export const comparisonRows = [
-  { country: '🇺🇸 USA', length: '18 – 24 months', tuition: '$25k – $55k', living: '$12k – $20k', work: '1 yr (3 yrs STEM)', best: 'Research & specialisation depth' },
-  { country: '🇬🇧 UK', length: '12 months', tuition: '£14k – £30k', living: '£10k – £15k', work: '2 years', best: 'Fastest, lowest total cost' },
-  { country: '🇨🇦 Canada', length: '16 – 24 months', tuition: 'C$18k – C$32k', living: 'C$12k – C$18k', work: 'Up to 3 years', best: 'Residency pathway' },
-  { country: '🇦🇺 Australia', length: '18 – 24 months', tuition: 'A$22k – A$45k', living: 'A$21k – A$26k', work: '2 – 4 years', best: 'Nursing, IT, engineering' },
-  { country: '🇩🇪 Germany', length: '24 months', tuition: '€0 – €3k', living: '€11k – €13k', work: '18 months', best: 'Lowest tuition, engineering' },
-  { country: '🇮🇪 Ireland', length: '12 – 24 months', tuition: '€12k – €25k', living: '€10k – €14k', work: '2 years', best: 'Tech & pharma careers' },
-  { country: '🇳🇿 New Zealand', length: '12 – 24 months', tuition: 'NZ$26k – NZ$40k', living: 'NZ$16k – NZ$22k', work: 'Up to 3 years', best: 'Quality of life' },
-  { country: '🇦🇪 UAE / 🇸🇬 SG', length: '12 – 18 months', tuition: '$14k – $30k', living: '$9k – $16k', work: 'Employer-sponsored', best: 'Staying close to home' },
+  { country: '🇺🇸 USA', length: '18 – 24 months', tuition: '₹24 – 53 Lakh', living: '₹11 – 19 Lakh', work: '1 yr (3 yrs STEM)', best: 'Research & specialisation depth' },
+  { country: '🇬🇧 UK', length: '12 months', tuition: '₹18 – 39 Lakh', living: '₹13 – 19 Lakh', work: '2 years', best: 'Fastest, lowest total cost' },
+  { country: '🇨🇦 Canada', length: '16 – 24 months', tuition: '₹12 – 22 Lakh', living: '₹8.5 – 12 Lakh', work: 'Up to 3 years', best: 'Residency pathway' },
+  { country: '🇦🇺 Australia', length: '18 – 24 months', tuition: '₹15 – 31 Lakh', living: '₹14 – 18 Lakh', work: '2 – 4 years', best: 'Nursing, IT, engineering' },
+  { country: '🇩🇪 Germany', length: '24 months', tuition: '₹0 – 3.5 Lakh', living: '₹12 – 14 Lakh', work: '18 months', best: 'Lowest tuition, engineering' },
+  { country: '🇮🇪 Ireland', length: '12 – 24 months', tuition: '₹13 – 28 Lakh', living: '₹11 – 16 Lakh', work: '2 years', best: 'Tech & pharma careers' },
+  { country: '🇳🇿 New Zealand', length: '12 – 24 months', tuition: '₹14 – 22 Lakh', living: '₹9 – 12 Lakh', work: 'Up to 3 years', best: 'Quality of life' },
+  { country: '🇦🇪 UAE / 🇸🇬 SG', length: '12 – 18 months', tuition: '₹13 – 29 Lakh', living: '₹8.5 – 15 Lakh', work: 'Employer-sponsored', best: 'Staying close to home' },
 ];

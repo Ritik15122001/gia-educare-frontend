@@ -21,7 +21,7 @@ export const stats = [
 ];
 
 export const processSteps = [
-  { num: '01', title: 'Free counselling', description: 'A 30-minute call to understand your goal, budget and timeline.' },
+  { num: '01', title: 'Free counselling', description: 'A free call with a senior counsellor to understand your goal, budget and timeline.' },
   { num: '02', title: 'Shortlist & tests', description: 'Target list locked, IELTS/GRE plan begins alongside.' },
   { num: '03', title: 'Applications', description: 'SOP, LORs, transcripts and portal submissions handled with you.' },
   { num: '04', title: 'Offers & funding', description: 'Compare offers, claim scholarships, arrange the loan and deposit.' },

@@ -4,10 +4,12 @@ import SelectField from './SelectField';
 import PhoneField from './PhoneField';
 import ConsentField from './ConsentField';
 import SuccessState from './SuccessState';
+import CaptchaField from './CaptchaField';
 import Button from '../common/Button';
 import { cn } from '../../utils/cn';
 import { useDestinations } from '../../hooks/useContent';
 import {
+  BUDGET_OPTIONS,
   LEVEL_OPTIONS,
   INTAKE_OPTIONS,
   TEST_OPTIONS,
@@ -15,7 +17,7 @@ import {
 } from '../../data/formOptions';
 
 export default function EnquiryForm({ variant = 'compact', onDark = false, badge, prefill }) {
-  const { values, errors, status, error, setField, handleSubmit, reset } = useEnquiryForm(prefill);
+  const { values, errors, status, error, setField, handleSubmit, reset, captchaKey, setCaptchaToken } = useEnquiryForm(prefill);
   const destinations = useDestinations();
   const isFull = variant === 'full';
   const done = status === 'success';
@@ -88,6 +90,16 @@ export default function EnquiryForm({ variant = 'compact', onDark = false, badge
           />
 
           <SelectField
+            label="Your total budget"
+            required
+            options={[{ value: '', label: 'Select a budget range' }, ...BUDGET_OPTIONS.map((b) => ({ value: b, label: b }))]}
+            value={values.budget}
+            onChange={(e) => setField('budget', e.target.value)}
+            error={errors.budget}
+            errorMessage="Please choose your budget range"
+          />
+
+          <SelectField
             label="Study level"
             options={LEVEL_OPTIONS}
             value={values.level}
@@ -99,7 +111,6 @@ export default function EnquiryForm({ variant = 'compact', onDark = false, badge
             options={INTAKE_OPTIONS}
             value={values.intake}
             onChange={(e) => setField('intake', e.target.value)}
-            full={!isFull}
           />
 
           {isFull && (
@@ -128,6 +139,27 @@ export default function EnquiryForm({ variant = 'compact', onDark = false, badge
               />
             </>
           )}
+
+          <FormField
+            full
+            label="Referral code"
+            name="referral"
+            type="text"
+            placeholder="Optional — a friend's name or partner code"
+            autoComplete="off"
+            maxLength={120}
+            value={values.referral}
+            onChange={(e) => setField('referral', e.target.value)}
+          />
+
+          <CaptchaField
+            full
+            value={values.captchaAnswer}
+            onChange={(v) => setField('captchaAnswer', v)}
+            onToken={setCaptchaToken}
+            refreshKey={captchaKey}
+            error={errors.captchaAnswer || errors.captcha}
+          />
 
           <ConsentField
             checked={values.consent}

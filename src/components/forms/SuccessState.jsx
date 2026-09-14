@@ -15,6 +15,8 @@ export default function SuccessState({ values, onReset }) {
         <b>Contact:</b> {values.code} {values.phone} · {values.email}
         <br />
         <b>Looking at:</b> {values.destination} · {values.level || '—'} · {values.intake || '—'}
+        <br />
+        <b>Budget:</b> {values.budget || '—'}
       </div>
       <Button variant="outline" onClick={onReset} style={{ marginTop: 18 }}>
         Send another enquiry

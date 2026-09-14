@@ -18,6 +18,11 @@ export const useStats = select('stats');
 export const useProcessSteps = select('processSteps');
 export const useFaqs = select('faqs');
 export const useComparisonRows = select('comparisonRows');
+export const usePosts = select('posts');
+export const usePostCategories = select('postCategories');
+export const useCounsellors = select('counsellors');
+export const useVideoTestimonials = select('videoTestimonials');
+export const useRecentPosts = select('postsRecent');
 
 const EMPTY = {};
 

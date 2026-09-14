@@ -10,11 +10,22 @@ import EnquiryModal from './EnquiryModal';
 import { useScrollTracking } from '../../hooks/useScrollTracking';
 import { useMobileMenuBehavior } from '../../hooks/useMobileMenuBehavior';
 
+// New page → top. A #hash (e.g. /destinations/uk#costs from the country menu)
+// → that section, once the page has rendered it.
 function ScrollRestoration() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'auto' });
-  }, [pathname]);
+    if (!hash) {
+      window.scrollTo({ top: 0, behavior: 'auto' });
+      return undefined;
+    }
+    const frame = requestAnimationFrame(() => {
+      const target = document.getElementById(decodeURIComponent(hash.slice(1)));
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      else window.scrollTo({ top: 0, behavior: 'auto' });
+    });
+    return () => cancelAnimationFrame(frame);
+  }, [pathname, hash]);
   return null;
 }
 

@@ -10,6 +10,7 @@ const EXPLORE_LINKS = [
   { to: '/destinations', label: 'Destinations' },
   { to: '/courses', label: 'Courses' },
   { to: '/about', label: 'About us' },
+  { to: '/blog', label: 'Blog' },
   { to: '/contact', label: 'Contact' },
 ];
 
@@ -70,7 +71,7 @@ export default function Footer() {
 
           <div>
             <div className="fcta">
-              <b>Free 30-minute counselling</b>
+              <b>Free counselling</b>
               <p>No fee, no obligation. Get an honest read on your profile this week.</p>
               <Button block arrow onClick={() => openEnquiry()}>
                 Book my slot

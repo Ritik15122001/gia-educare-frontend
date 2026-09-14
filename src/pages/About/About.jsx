@@ -6,6 +6,7 @@ import Button from '../../components/common/Button';
 import Milestones from '../../components/sections/Milestones';
 import ValuesGrid from '../../components/sections/ValuesGrid';
 import TeamGrid from '../../components/sections/TeamGrid';
+import FounderConnect from '../../components/sections/FounderConnect';
 import EnquiryBand from '../../components/sections/EnquiryBand';
 import { useOpenEnquiry } from '../../hooks/useOpenEnquiry';
 import { useSection, useSettings, splitAccent } from '../../hooks/useContent';
@@ -82,6 +83,7 @@ export default function About() {
 
       <ValuesGrid />
       <TeamGrid />
+      <FounderConnect />
 
       <EnquiryBand
         eyebrow={cta.eyebrow}

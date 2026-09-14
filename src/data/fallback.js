@@ -6,6 +6,7 @@ import { destinationsPreview, destinationsDetailed, comparisonRows } from './des
 import { courses, courseCategories, studyLevels } from './courses';
 import { testimonials, team, milestones, values } from './testimonials';
 import { SITE, stats, processSteps, faqs } from './site';
+import { posts, postCategories } from './posts';
 
 const withIds = (rows, prefix) =>
   rows.map((row, i) => ({ id: row.id || `${prefix}-${i}`, order: i, published: true, ...row }));
@@ -20,6 +21,7 @@ const mergedDestinations = destinationsDetailed.map((detail, i) => {
     published: true,
     showOnHome: Boolean(preview),
     name: detail.name,
+    imageUrl: detail.imageUrl || '',
     flag: detail.flag,
     bg: detail.bg,
     tag: preview?.tag || '',
@@ -47,6 +49,22 @@ export const FALLBACK_CONTENT = {
       'Independent study-abroad counselling since 2016. Honest shortlists, capped caseloads, and one counsellor with you from evaluation to departure.',
     offices: SITE.offices.map((o, i) => ({ ...o, hours: 'Mon–Sat · 10am–7pm', order: i })),
     socials: { instagram: '', linkedin: '', youtube: '', whatsapp: '' },
+    founder: {
+      enabled: true,
+      name: 'Rhea Malhotra',
+      title: 'Founder & Lead Counsellor',
+      photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Coffee-desk-laptop-notebook_%2824244320481%29.jpg/960px-Coffee-desk-laptop-notebook_%2824244320481%29.jpg',
+      message:
+        'I started GIA Educare after being mis-advised as a student myself. Every family deserves honest odds, a clear budget and one person who stays with them to the finish line. If you have a question, message me directly — I read every one.',
+      email: 'founder@giaeducare.com',
+      phone: '+91 90000 00010',
+      whatsapp: '+91 90000 00010',
+      linkedin: '',
+      instagram: '',
+      youtube: '',
+      twitter: '',
+      facebook: '',
+    },
     seo: {
       title: 'GIA Educare – Study Abroad Consultants',
       description:
@@ -62,10 +80,18 @@ export const FALLBACK_CONTENT = {
   services: withIds(services, 'service'),
   testimonials: withIds(testimonials, 'testimonial'),
   team: withIds(team, 'team'),
+  counsellors: withIds(team, 'team').filter((m) => m.featured),
   milestones: withIds(milestones, 'milestone'),
   values: withIds(values, 'value'),
   stats: withIds(stats.map((s) => ({ ...s, value: s.to })), 'stat'),
   processSteps: withIds(processSteps, 'step'),
   faqs: withIds(faqs.map((f) => ({ ...f, question: f.q, answer: f.a })), 'faq'),
   comparisonRows: withIds(comparisonRows, 'row'),
+  // contentStore only keeps keys present here, so both blog keys must exist or
+  // the live payload's posts would be dropped on merge.
+  posts: withIds(posts, 'post'),
+  postsRecent: withIds(posts, 'post').slice(0, 3),
+  postCategories: withIds(postCategories, 'pcat'),
+  // No bundled videos: the section only renders once real ones are added.
+  videoTestimonials: [],
 };

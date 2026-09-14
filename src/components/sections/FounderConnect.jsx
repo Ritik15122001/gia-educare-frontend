@@ -1,0 +1,89 @@
+import Reveal from '../common/Reveal';
+import Eyebrow from '../common/Eyebrow';
+import Icon from '../common/Icon';
+import SocialIcon from '../common/SocialIcon';
+import { useSection, useSettings } from '../../hooks/useContent';
+import { mailHref, telHref, whatsappHref } from '../../utils/contact';
+
+const DEFAULTS = { eyebrow: 'Founder connect', title: 'A note from our founder' };
+
+const SOCIALS = [
+  ['linkedin', 'LinkedIn'],
+  ['instagram', 'Instagram'],
+  ['youtube', 'YouTube'],
+  ['twitter', 'X'],
+  ['facebook', 'Facebook'],
+];
+
+const initialsOf = (name = '') => name.split(/\s+/).slice(0, 2).map((w) => w[0] || '').join('').toUpperCase();
+
+export default function FounderConnect() {
+  const settings = useSettings();
+  const section = useSection('home.founder', DEFAULTS);
+  const founder = settings.founder;
+
+  if (!founder?.enabled || !founder.name) return null;
+
+  const firstName = founder.name.split(' ')[0];
+  const email = mailHref(founder.email, `Hello ${firstName}`);
+  const call = telHref(founder.phone);
+  const whatsapp = whatsappHref(founder.whatsapp, `Hi ${firstName}, I'd like to talk about studying abroad.`);
+  const socials = SOCIALS.filter(([key]) => founder[key]);
+
+  return (
+    <div className="section founder">
+      <div className="wrap">
+        <div className="founder-grid">
+          <Reveal className="founder-photo">
+            {founder.photoUrl ? (
+              <img src={founder.photoUrl} alt={founder.name} loading="lazy" />
+            ) : (
+              <span className="founder-initials" aria-hidden="true">
+                {initialsOf(founder.name)}
+              </span>
+            )}
+            <div className="founder-id">
+              <b>{founder.name}</b>
+              <span>{founder.title}</span>
+            </div>
+          </Reveal>
+
+          <Reveal delay={2}>
+            <Eyebrow>{section.eyebrow}</Eyebrow>
+            <h2 className="h2">{section.title}</h2>
+            {founder.message && <blockquote className="founder-message">{founder.message}</blockquote>}
+
+            <div className="founder-actions">
+              {whatsapp && (
+                <a className="btn btn--whatsapp" href={whatsapp} target="_blank" rel="noreferrer noopener">
+                  <SocialIcon name="whatsapp" size={16} /> Message {firstName}
+                </a>
+              )}
+              {email && (
+                <a className="btn btn--ghost" href={email}>
+                  <Icon name="mail" size={16} strokeWidth={2} /> Email
+                </a>
+              )}
+              {call && (
+                <a className="btn btn--ghost" href={call}>
+                  <Icon name="phone" size={16} strokeWidth={2} /> Call
+                </a>
+              )}
+            </div>
+
+            {socials.length > 0 && (
+              <div className="founder-socials">
+                <span>Follow {firstName}</span>
+                {socials.map(([key, label]) => (
+                  <a key={key} href={founder[key]} target="_blank" rel="noreferrer noopener" aria-label={`${founder.name} on ${label}`} title={label}>
+                    <SocialIcon name={key} size={17} />
+                  </a>
+                ))}
+              </div>
+            )}
+          </Reveal>
+        </div>
+      </div>
+    </div>
+  );
+}

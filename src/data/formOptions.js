@@ -12,6 +12,10 @@ export const DESTINATION_OPTIONS = [
   'Not decided yet',
 ];
 
+// Total program budget in INR. Mirrors BUDGET_RANGES in backend/src/models/Enquiry.js —
+// the API rejects anything not in that list.
+export const BUDGET_OPTIONS = ['Up to ₹10 Lakh', '₹10 – 20 Lakh', '₹20 – 30 Lakh', '₹30 – 50 Lakh', 'Above ₹50 Lakh'];
+
 export const LEVEL_OPTIONS = ['Masters', 'Bachelors', 'MBA', 'PhD', 'Diploma / Pathway'];
 
 export const INTAKE_OPTIONS = ['Jan 2027', 'May 2027', 'Sep 2027', 'Jan 2028', 'Flexible'];

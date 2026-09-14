@@ -15,7 +15,7 @@ export default function ComparisonTable() {
   if (!rows.length) return null;
 
   return (
-    <div className="section section--tight" style={{ background: 'var(--paper)', borderBlock: '1px solid var(--line)' }}>
+    <div className="section section--tight anchor" id="compare" style={{ background: 'var(--paper)', borderBlock: '1px solid var(--line)' }}>
       <div className="wrap">
         <SectionHeader eyebrow={section.eyebrow} title={section.title} lead={section.lead} />
         <Reveal className="tbl-wrap">

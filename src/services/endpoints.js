@@ -9,4 +9,5 @@ export const ENDPOINTS = {
   TESTIMONIALS: '/public/testimonials',
   FAQS: '/public/faqs',
   ENQUIRIES: '/public/enquiries',
+  CAPTCHA: '/captcha',
 };

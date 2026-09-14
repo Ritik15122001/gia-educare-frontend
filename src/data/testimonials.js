@@ -27,10 +27,10 @@ export const testimonials = [
 ];
 
 export const team = [
-  { id: 'p1', initials: 'RM', name: 'Rhea Malhotra', role: 'Founder · US & Canada', bio: 'Twelve years in admissions consulting. Handles US graduate applications and funding strategy.' },
-  { id: 'p2', initials: 'AV', name: 'Arjun Verma', role: 'UK & Ireland desk', bio: 'Former UK university recruiter. Knows exactly what each admissions office actually reads.' },
-  { id: 'p3', initials: 'SN', name: 'Sana Nair', role: 'Visa & documentation', bio: 'Runs file review and mock interviews. Has taken over 3,000 files through submission.' },
-  { id: 'p4', initials: 'DK', name: 'Dev Kulkarni', role: 'Test prep lead', bio: 'IELTS and GRE trainer. Builds the six-week plans and runs the weekly mock reviews.' },
+  { id: 'p1', initials: 'RM', name: 'Rhea Malhotra', role: 'Founder · US & Canada', bio: 'Twelve years in admissions consulting. Handles US graduate applications and funding strategy.', featured: true, specialisation: 'USA & Canada · masters and funding', experienceYears: 12, studentsCounselled: 3200, languages: ['English', 'Hindi'], phone: '+91 90000 00010', whatsapp: '+91 90000 00010' },
+  { id: 'p2', initials: 'AV', name: 'Arjun Verma', role: 'UK & Ireland desk', bio: 'Former UK university recruiter. Knows exactly what each admissions office actually reads.', featured: true, specialisation: 'UK & Ireland admissions', experienceYears: 9, studentsCounselled: 2100, languages: ['English', 'Hindi', 'Punjabi'], phone: '+91 90000 00011', whatsapp: '+91 90000 00011' },
+  { id: 'p3', initials: 'SN', name: 'Sana Nair', role: 'Visa & documentation', bio: 'Runs file review and mock interviews. Has taken over 3,000 files through submission.', featured: true, specialisation: 'Visas, loans and documentation', experienceYears: 10, studentsCounselled: 3000, languages: ['English', 'Malayalam', 'Hindi'], phone: '+91 90000 00012', whatsapp: '+91 90000 00012' },
+  { id: 'p4', initials: 'DK', name: 'Dev Kulkarni', role: 'Test prep lead', bio: 'IELTS and GRE trainer. Builds the six-week plans and runs the weekly mock reviews.', featured: true, specialisation: 'Germany, IELTS & GRE', experienceYears: 7, studentsCounselled: 1500, languages: ['English', 'Marathi', 'Hindi'], phone: '+91 90000 00013', whatsapp: '+91 90000 00013' },
 ];
 
 export const milestones = [

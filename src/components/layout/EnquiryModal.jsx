@@ -36,7 +36,7 @@ export default function EnquiryModal() {
         <button className="modal-close" aria-label="Close" onClick={handleClose}>
           ×
         </button>
-        <EnquiryForm variant={modalVariant} prefill={prefill} badge="Free · 30 min" />
+        <EnquiryForm variant={modalVariant} prefill={prefill} badge="100% free" />
       </div>
     </div>
   );

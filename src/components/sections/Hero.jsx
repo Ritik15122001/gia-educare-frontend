@@ -66,7 +66,7 @@ export default function Hero() {
           </div>
 
           <div className="enq enq--onDark">
-            <span className="enq-badge">Free · 30 min</span>
+            <span className="enq-badge">100% free</span>
             <div className="enq-head">
               <h3>Book your free counselling call</h3>
               <p>Takes 40 seconds to request. A senior counsellor replies within one working day.</p>
