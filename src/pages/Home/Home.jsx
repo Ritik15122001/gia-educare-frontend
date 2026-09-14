@@ -8,6 +8,7 @@ import ProcessSteps from '../../components/sections/ProcessSteps';
 import TestimonialsSection from '../../components/sections/TestimonialsSection';
 import BlogPreview from '../../components/sections/BlogPreview';
 import CounsellorsCarousel from '../../components/sections/CounsellorsCarousel';
+import ClientsWall from '../../components/sections/ClientsWall';
 import VideoTestimonials from '../../components/sections/VideoTestimonials';
 import FounderConnect from '../../components/sections/FounderConnect';
 import EnquiryBand from '../../components/sections/EnquiryBand';
@@ -31,6 +32,7 @@ export default function Home() {
     <>
       <Hero />
       <StatsBand />
+      <ClientsWall />
       <ServicesSection />
       <DestinationsPreview />
       <WhyUsSplit />

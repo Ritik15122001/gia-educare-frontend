@@ -8,6 +8,7 @@ import { testimonials, team, milestones, values } from './testimonials';
 import { SITE, stats, processSteps, faqs } from './site';
 import { posts, postCategories } from './posts';
 import { exams } from './exams';
+import { clients } from './clients';
 
 const withIds = (rows, prefix) =>
   rows.map((row, i) => ({ id: row.id || `${prefix}-${i}`, order: i, published: true, ...row }));
@@ -96,4 +97,5 @@ export const FALLBACK_CONTENT = {
   // No bundled videos: the section only renders once real ones are added.
   videoTestimonials: [],
   exams: withIds(exams, 'exam'),
+  clients: withIds(clients, 'client'),
 };
