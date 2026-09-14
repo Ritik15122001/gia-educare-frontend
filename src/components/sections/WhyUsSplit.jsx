@@ -57,10 +57,14 @@ export default function WhyUsSplit() {
             </Button>
           </Reveal>
 
-          <Reveal delay={2} className="visual">
+          <Reveal delay={2} className="visual visual--steps">
             <div className="visual-inner">
-              {VISUAL_CARDS.map((c) => (
-                <div className="vcard" key={c.title}>
+              <div className="visual-label">
+                <span>A typical GIA journey</span>
+                <small>Profile to departure</small>
+              </div>
+              {VISUAL_CARDS.map((c, i) => (
+                <div className={i === VISUAL_CARDS.length - 1 ? 'vcard vcard--done' : 'vcard'} key={c.title}>
                   <span className="vi">{c.i}</span>
                   <div>
                     <b>{c.title}</b>
