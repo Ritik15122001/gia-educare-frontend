@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import Logo from '../common/Logo';
 import Button from '../common/Button';
-import { useDestinations, usePostCategories, usePosts, useSettings } from '../../hooks/useContent';
+import { useDestinations, useExams, usePostCategories, usePosts, useSettings } from '../../hooks/useContent';
 import { useUiStore } from '../../store/uiStore';
 import { useOpenEnquiry } from '../../hooks/useOpenEnquiry';
 import { cn } from '../../utils/cn';
@@ -28,6 +28,7 @@ export default function MobileDrawer() {
   const openEnquiry = useOpenEnquiry();
   const settings = useSettings();
   const destinations = useDestinations();
+  const exams = useExams();
   const posts = usePosts();
   const navCategories = usePostCategories().filter((c) => c.showInNav);
   const [expanded, setExpanded] = useState(null);
@@ -66,6 +67,12 @@ export default function MobileDrawer() {
           {sub('/blog?category=beginner-doubts', 'Beginner doubts')}
           {destinations.map((d) => sub(`/destinations/${d.slug}`, `${d.flag} ${d.name}`))}
           {sub('/destinations', 'Compare all countries →')}
+        </Section>
+
+        <Section id="drawer-exams" label="Exams" open={expanded === 'exams'} onToggle={() => toggle('exams')}>
+          {sub('/blog?category=exam-doubts', 'Beginner doubts')}
+          {exams.map((e) => sub(`/exams/${e.slug}`, e.name))}
+          {sub('/exams#colleges', 'Find colleges by exam →')}
         </Section>
 
         {link('/courses', 'Courses')}

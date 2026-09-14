@@ -81,6 +81,107 @@ The SOP exists to explain what a transcript cannot: why the gap, why the switch,
 
 We do not lend and we take nothing from lenders.`,
   },
+  // --- Exam doubts ----------------------------------------------------------
+  {
+    slug: 'which-exam-for-which-course-and-country',
+    coverUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Hourglass_1.jpg/960px-Hourglass_1.jpg',
+    category: 'exam-doubts',
+    destination: '',
+    exam: '',
+    publishedAt: '2026-09-12T09:00:00.000Z',
+    title: 'Which exam to give for which course & country?',
+    author: 'Dev Kulkarni',
+    tags: ['Exams', 'Choosing a test'],
+    excerpt: 'Most students need two tests: one to prove their English and one for admission. Here is how to work out exactly which ones your shortlist needs.',
+    body: `Almost every student abroad needs an **English test**, and many also need an **admission test**. Which ones depends on the course and the country.
+
+## Step 1 — the English test
+
+- **IELTS** is accepted almost everywhere and is the safest default, especially for the UK, Australia, Canada, New Zealand and Ireland.
+- **TOEFL iBT** is the traditional choice for US universities.
+- **PTE Academic** is popular for Australia and New Zealand because results come back quickly.
+- **Duolingo English Test (DET)** is the cheapest and fastest, but only works if every university on your list accepts it.
+
+## Step 2 — the admission test
+
+- **MS, MA or PhD in the US** → usually the **GRE**.
+- **MBA or business masters** → the **GMAT**, or the GRE where accepted.
+- **Bachelors in the US** → the **SAT** at many universities.
+- **UK, Ireland, Australia and most of Europe** → often no admission test for masters; your degree marks carry more weight.
+
+## Step 3 — check the visa
+
+Some visas only accept specific English tests, or a specific version of one. Always confirm the visa rules as well as the university's.
+
+> Pick your universities first, then your tests — not the other way round.
+
+Fees and formats change often, so confirm on each test's official website before you book. We map the right tests to your shortlist during free counselling.`,
+  },
+  {
+    slug: 'ielts-vs-toefl-vs-pte-vs-det',
+    coverUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Getting_the_Most_Out_of_Multiple-choice_Questions_%286347992956%29.jpg/960px-Getting_the_Most_Out_of_Multiple-choice_Questions_%286347992956%29.jpg',
+    category: 'exam-doubts',
+    destination: '',
+    exam: '',
+    publishedAt: '2026-09-11T09:00:00.000Z',
+    title: 'IELTS v/s TOEFL v/s PTE v/s DET?',
+    author: 'Dev Kulkarni',
+    tags: ['IELTS', 'TOEFL', 'PTE', 'DET'],
+    excerpt: 'Four English tests, four different formats. The right one depends on where you are applying and how you perform best under test conditions.',
+    body: `All four tests prove your English. They differ in **format, speed, cost and where they are accepted**.
+
+## At a glance
+
+- **IELTS** — band 0 – 9, about 2 hr 45 min, speaking face to face with an examiner. Accepted almost everywhere.
+- **TOEFL iBT** — fully on computer, including recorded speaking. The traditional choice for the US.
+- **PTE Academic** — 10 – 90, about 2 hours, scored by software with results in a few days. Popular for Australia and New Zealand.
+- **DET** — 10 – 160, about 1 hour online from home, and the cheapest. Accepted by many, but not all, universities.
+
+## How to choose
+
+1. **Check your shortlist first.** If one university does not accept a test, that test is out.
+2. **Check the visa.** Some student visas accept only certain tests.
+3. **Play to your strengths.** If you speak more naturally to a person, IELTS suits you; if you prefer a computer, TOEFL or PTE may suit you better.
+4. **Consider timing.** PTE and DET results arrive fastest when a deadline is close.
+
+> The cheapest test is the one you only have to take once.
+
+Fees and formats change, so confirm on the official websites before booking.`,
+  },
+  {
+    slug: 'ielts-academic-vs-ielts-general',
+    coverUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/The_Hub%2C_Chancellor_Oppenheimer_Library%2C_University_of_Cape_Town.jpg/960px-The_Hub%2C_Chancellor_Oppenheimer_Library%2C_University_of_Cape_Town.jpg',
+    category: 'exam-doubts',
+    destination: '',
+    exam: 'ielts',
+    publishedAt: '2026-09-09T09:00:00.000Z',
+    title: 'IELTS academic V/s IELTS general?',
+    author: 'Sana Nair',
+    tags: ['IELTS'],
+    excerpt: 'Booking the wrong IELTS is one of the most common and costly mistakes. Here is which version you need and why.',
+    body: `There are two versions of IELTS, and universities only accept one of them.
+
+## IELTS Academic
+
+For **university admission** — bachelors, masters and PhD — and for professional registration. If you are applying to study abroad, this is almost certainly the one you need.
+
+## IELTS General Training
+
+For **work, migration** and some training or below-degree programs. Most universities will **not** accept it for admission.
+
+## What is the same, and what is different
+
+- **Listening and Speaking** are the same in both versions.
+- **Reading and Writing** are different — Academic uses academic texts and asks you to describe charts or data; General Training uses everyday texts and letter writing.
+
+## Before you book
+
+1. Check your university's English requirement page.
+2. Check whether your visa needs a specific version, such as **IELTS for UKVI**.
+3. Book the matching test — scores cannot be converted between versions.
+
+> When in doubt for studying abroad, the answer is IELTS Academic.`,
+  },
 ];
 
 export const postCategories = [
@@ -88,4 +189,5 @@ export const postCategories = [
   { key: 'finances', label: 'Finances', description: 'Costs, education loans, scholarships and money abroad.', showInNav: true },
   { key: 'country-guides', label: 'Country Guides', description: 'What studying in a specific country actually involves.' },
   { key: 'applications', label: 'Applications', description: 'SOPs, LORs, deadlines and getting the admit.' },
+  { key: 'exam-doubts', label: 'Exam Doubts', description: 'Which test to take, how they compare and what score you need.' },
 ];

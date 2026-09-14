@@ -22,6 +22,7 @@ export const usePosts = select('posts');
 export const usePostCategories = select('postCategories');
 export const useCounsellors = select('counsellors');
 export const useVideoTestimonials = select('videoTestimonials');
+export const useExams = select('exams');
 export const useRecentPosts = select('postsRecent');
 
 const EMPTY = {};

@@ -22,11 +22,14 @@ export const INTAKE_OPTIONS = ['Jan 2027', 'May 2027', 'Sep 2027', 'Jan 2028', '
 
 export const TEST_OPTIONS = [
   'Not taken yet',
+  'Preparing now',
   'IELTS done',
   'TOEFL done',
+  'DET done',
   'PTE done',
-  'GRE / GMAT done',
-  'Preparing now',
+  'GRE done',
+  'GMAT done',
+  'SAT done',
 ];
 
 export const QUALIFICATION_OPTIONS = [

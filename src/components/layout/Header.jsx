@@ -3,6 +3,7 @@ import { NavLink, useLocation } from 'react-router-dom';
 import Logo from '../common/Logo';
 import Button from '../common/Button';
 import CountriesMenu from './nav/CountriesMenu';
+import ExamsMenu from './nav/ExamsMenu';
 import CategoryMenu from './nav/CategoryMenu';
 import { useNavigationStore } from '../../store/navigationStore';
 import { useUiStore } from '../../store/uiStore';
@@ -96,6 +97,11 @@ export default function Header() {
               {openMenu === 'countries' && <CountriesMenu id="menu-countries" onNavigate={closeNow} />}
             </li>
 
+            <li className="has-mega" {...hoverProps('exams')}>
+              {trigger('exams', 'Exams', pathname.startsWith('/exams') || categoryParam === 'exam-doubts')}
+              {openMenu === 'exams' && <ExamsMenu id="menu-exams" onNavigate={closeNow} />}
+            </li>
+
             <li>
               <NavLink to="/courses" className={({ isActive }) => cn(isActive && 'active')}>
                 Courses
@@ -115,7 +121,7 @@ export default function Header() {
             <li>
               <NavLink
                 to="/blog"
-                className={({ isActive }) => cn(isActive && !navCategories.some((c) => c.key === categoryParam) && categoryParam !== 'beginner-doubts' && 'active')}
+                className={({ isActive }) => cn(isActive && !navCategories.some((c) => c.key === categoryParam) && !['beginner-doubts', 'exam-doubts'].includes(categoryParam) && 'active')}
               >
                 Blog
               </NavLink>

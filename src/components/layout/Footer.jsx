@@ -8,6 +8,7 @@ import { useSettings } from '../../hooks/useContent';
 const EXPLORE_LINKS = [
   { to: '/', label: 'Home' },
   { to: '/destinations', label: 'Destinations' },
+  { to: '/exams', label: 'Exams' },
   { to: '/courses', label: 'Courses' },
   { to: '/about', label: 'About us' },
   { to: '/blog', label: 'Blog' },

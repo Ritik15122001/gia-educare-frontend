@@ -4,6 +4,8 @@ import RootLayout from './components/layout/RootLayout';
 import Home from './pages/Home/Home';
 import Destinations from './pages/Destinations/Destinations';
 import DestinationDetail from './pages/Destinations/DestinationDetail';
+import Exams from './pages/Exams/Exams';
+import ExamDetail from './pages/Exams/ExamDetail';
 import Courses from './pages/Courses/Courses';
 import About from './pages/About/About';
 import Contact from './pages/Contact/Contact';
@@ -29,6 +31,8 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/destinations" element={<Destinations />} />
           <Route path="/destinations/:slug" element={<DestinationDetail />} />
+          <Route path="/exams" element={<Exams />} />
+          <Route path="/exams/:slug" element={<ExamDetail />} />
           <Route path="/courses" element={<Courses />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
