@@ -5,9 +5,9 @@ import Reveal from '../common/Reveal';
 import { useServices, useSection, splitAccent } from '../../hooks/useContent';
 
 const DEFAULTS = {
-  eyebrow: 'What we do',
-  title: 'Everything between |"I want to study abroad"| and boarding the flight',
-  lead: 'One dedicated counsellor stays with you through all seven stages. No handoffs, no chasing, no surprise fees.',
+  eyebrow: "What we do",
+  title: "From Your First Question to |Your Flight| — We're With You.",
+  lead: "One dedicated counsellor supports you through every stage — from profile evaluation and university selection to applications, visa and pre-departure guidance.",
 };
 
 export default function ServicesSection() {

@@ -3,9 +3,9 @@ import SectionHeader from '../common/SectionHeader';
 import { useClients, useSection } from '../../hooks/useContent';
 
 const DEFAULTS = {
-  eyebrow: 'Our clients',
-  title: 'Universities we have worked with',
-  lead: 'Business schools and universities across the US, UK, Ireland, Germany and France that trust us with their student recruitment.',
+  eyebrow: "University network",
+  title: "Universities Our Students Choose",
+  lead: "Explore leading universities and business schools across the US, UK, Ireland, Germany, France and other popular study destinations.",
 };
 
 // One tile per institution: the logo when there is one, otherwise the name as a

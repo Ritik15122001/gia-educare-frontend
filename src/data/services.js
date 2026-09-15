@@ -1,44 +1,38 @@
 export const services = [
   {
-    id: 'profile-evaluation',
-    title: 'Profile evaluation',
-    description:
-      'We map your academics, budget, test scores and career goal to a realistic target list — ambitious, moderate and safe.',
-    icon: 'target',
+    id: "profile-evaluation",
+    title: "Profile Evaluation",
+    description: "We assess your academics, budget, test scores and career goals to build a realistic university shortlist.",
+    icon: "target",
   },
   {
-    id: 'shortlisting',
-    title: 'University shortlisting',
-    description:
-      'Course-level comparison on ranking, fees, intake, scholarships, post-study work rights and graduate outcomes.',
-    icon: 'search',
+    id: "university-shortlisting",
+    title: "University Shortlisting",
+    description: "Compare universities and courses based on ranking, fees, scholarships, entry requirements and career outcomes.",
+    icon: "search",
   },
   {
-    id: 'sop-lor',
-    title: 'SOP, LOR & essays',
-    description:
-      'Structured drafting sessions with editors who have read thousands of admits — your voice, sharpened, never templated.',
-    icon: 'document',
+    id: "application-admission",
+    title: "Application & Admission",
+    description: "We manage your applications, documents, deadlines and admission process from submission to offer letter.",
+    icon: "cap",
   },
   {
-    id: 'test-prep',
-    title: 'IELTS / TOEFL / GRE prep',
-    description:
-      'Diagnostic test, a 6-week plan and small-batch live classes with weekly mocks and score-band tracking.',
-    icon: 'shield-check',
+    id: "sop-lor-essays",
+    title: "SOP, LOR & Essays",
+    description: "Expert guidance to help you present your profile authentically and build stronger application documents.",
+    icon: "document",
   },
   {
-    id: 'visa',
-    title: 'Visa & documentation',
-    description:
-      'Financial documents, SOP for visa, mock interviews and file review before submission — the step most applications fail on.',
-    icon: 'briefcase',
+    id: "visa-documentation",
+    title: "Visa & Documentation",
+    description: "End-to-end guidance for financial documents, visa forms, interviews and submission preparation.",
+    icon: "briefcase",
   },
   {
-    id: 'loans-scholarships',
-    title: 'Loans & scholarships',
-    description:
-      'Merit and need-based scholarship applications, plus collateral-free education loan options from partner lenders.',
-    icon: 'coins',
+    id: "loans-scholarships",
+    title: "Loans, Scholarships & Pre-Departure",
+    description: "Explore suitable funding options and get practical guidance before you begin your journey abroad.",
+    icon: "coins",
   },
 ];

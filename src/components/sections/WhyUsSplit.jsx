@@ -2,44 +2,57 @@ import Reveal from '../common/Reveal';
 import Eyebrow from '../common/Eyebrow';
 import Chk from '../common/Chk';
 import Button from '../common/Button';
+import { useSection } from '../../hooks/useContent';
+
+// Heading and intro are editable in Admin → Section copy ("Home — why us");
+// these are the fallbacks when a field is left blank.
+const DEFAULTS = {
+  eyebrow: "Why GIA Educare",
+  title: "Your Goals Come First. Not a University Quota.",
+  lead: "We recommend universities based on your profile, goals, budget and career plans—not simply because a particular option is available.",
+};
 
 const CHECKLIST = [
   {
-    title: 'One counsellor, start to finish',
-    description: 'The person who evaluates your profile is the person who preps you for the visa interview.',
+    title: "One counsellor, start to finish",
+    description: "The counsellor who understands your profile stays with you throughout your application and visa journey.",
   },
   {
-    title: 'Transparent shortlists',
-    description: 'Every recommendation comes with ranking, total cost of attendance, intake deadline and graduate outcome data.',
+    title: "Transparent shortlists",
+    description: "Every recommendation is explained clearly, including tuition, entry requirements, deadlines, scholarships and relevant career outcomes.",
   },
   {
-    title: 'Application tracker you can see',
-    description: 'Live status for every university — submitted, under review, offer, deposit, CAS/I-20.',
+    title: "Application tracking",
+    description: "Track the progress of your applications from submission and review to offer, deposit and visa documentation.",
   },
   {
-    title: 'Support after you land',
-    description: 'Accommodation, bank account, SIM, part-time work rules and an alumni group in every major city.',
+    title: "Support beyond admission",
+    description: "Get practical guidance for your next steps, including pre-departure preparation and settling into your destination.",
   },
 ];
 
+const JOURNEY_LABEL = "An example GIA journey";
+const JOURNEY_SUB = "From profile to departure";
+
 const VISUAL_CARDS = [
-  { i: '1', title: 'Profile score: 7.8 / 10', small: 'Strong for Canada & Ireland · stretch for US top-30' },
-  { i: '2', title: '9 universities shortlisted', small: '3 ambitious · 4 moderate · 2 safe' },
-  { i: '3', title: '4 offers received', small: '2 with partial scholarships' },
-  { i: '✓', title: 'Visa approved', small: 'Departure: 24 August' },
+  { i: "1", title: "Profile evaluated", small: "Strong fit for Canada & Ireland · Competitive for selected US universities" },
+  { i: "2", title: "9 universities shortlisted", small: "3 ambitious · 4 target · 2 safer options" },
+  { i: "3", title: "4 offers received", small: "2 included partial scholarships" },
+  { i: "✓", title: "Ready for departure", small: "Visa documentation completed · Pre-departure guidance" },
 ];
 
 export default function WhyUsSplit() {
+  const section = useSection('home.why', DEFAULTS);
+
   return (
     <div className="section">
       <div className="wrap">
         <div className="split">
           <Reveal>
-            <Eyebrow>Why GIA Educare</Eyebrow>
-            <h2 className="h2">We are paid to get you admitted — not to fill a university's seats</h2>
+            <Eyebrow>{section.eyebrow}</Eyebrow>
+            <h2 className="h2">{section.title}</h2>
             <p className="lead" style={{ marginTop: 16 }}>
-              Most consultancies push whichever campus pays the highest commission. We publish our shortlisting
-              criteria, show you the trade-offs, and let you decide.
+              {section.lead}
             </p>
             <ul className="checklist">
               {CHECKLIST.map((item) => (
@@ -60,8 +73,8 @@ export default function WhyUsSplit() {
           <Reveal delay={2} className="visual visual--steps">
             <div className="visual-inner">
               <div className="visual-label">
-                <span>A typical GIA journey</span>
-                <small>Profile to departure</small>
+                <span>{JOURNEY_LABEL}</span>
+                <small>{JOURNEY_SUB}</small>
               </div>
               {VISUAL_CARDS.map((c, i) => (
                 <div className={i === VISUAL_CARDS.length - 1 ? 'vcard vcard--done' : 'vcard'} key={c.title}>

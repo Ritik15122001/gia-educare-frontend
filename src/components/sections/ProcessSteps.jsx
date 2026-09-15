@@ -2,7 +2,11 @@ import Reveal from '../common/Reveal';
 import SectionHeader from '../common/SectionHeader';
 import { useProcessSteps, useSection } from '../../hooks/useContent';
 
-const DEFAULTS = { eyebrow: 'The process', title: 'Five steps. Nine to twelve months.' };
+const DEFAULTS = {
+  eyebrow: "The process",
+  title: "Five Steps From Profile to Departure.",
+  lead: "A clear, guided process from your first counselling session to university admission, visa and pre-departure.",
+};
 
 export default function ProcessSteps() {
   const processSteps = useProcessSteps();

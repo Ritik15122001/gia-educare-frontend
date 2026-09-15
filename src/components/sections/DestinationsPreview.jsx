@@ -5,9 +5,9 @@ import DestinationCard from '../cards/DestinationCard';
 import { useHomeDestinations, useSection } from '../../hooks/useContent';
 
 const DEFAULTS = {
-  eyebrow: 'Where you can go',
-  title: 'Six destinations our students pick most',
-  lead: 'Each one has a different sweet spot — cost, duration, work rights or PR pathway. We help you pick on evidence, not on trends.',
+  eyebrow: "Where you can go",
+  title: "Where Your Study Abroad Journey Can Take You",
+  lead: "Explore leading study destinations based on your course, budget, career goals, post-study opportunities and long-term plans. We help you choose on evidence, not trends.",
 };
 
 export default function DestinationsPreview() {
@@ -29,7 +29,8 @@ export default function DestinationsPreview() {
           <LinkArrow to="/destinations">All destinations</LinkArrow>
         </Reveal>
 
-        <div className="grid cols-3">
+        {/* Four across once there are more than six, so eight cards fill two rows. */}
+        <div className={`grid ${destinations.length > 6 ? 'cols-4' : 'cols-3'}`}>
           {destinations.map((d, i) => (
             <DestinationCard key={d.id} destination={d} delay={i % 3} />
           ))}
