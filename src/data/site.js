@@ -1,14 +1,12 @@
 export const SITE = {
   brand: 'GIA Educare',
   tagline: 'Study · Apply · Fly',
-  phonePrimary: '+91 90000 00000',
-  phoneSecondary: '+91 90000 00001',
-  emailPrimary: 'hello@giaeducare.com',
-  emailAdmissions: 'admissions@giaeducare.com',
+  phonePrimary: "+91 99534 14741",
+  phoneSecondary: "+91 98106 49827",
+  emailPrimary: "info@giaeducare.com",
+  emailAdmissions: '',
   offices: [
-    { id: 'gurugram', name: 'Gurugram · Head office', address: '4th Floor, Orion Tower, Sector 44, Gurugram 122003', phone: '+91 90000 00000' },
-    { id: 'bengaluru', name: 'Bengaluru', address: '2nd Floor, Meridian Square, Indiranagar, Bengaluru 560038', phone: '+91 90000 00002' },
-    { id: 'pune', name: 'Pune', address: 'Unit 11, Aurora Business Park, Baner, Pune 411045', phone: '+91 90000 00003' },
+    { id: 'noida', name: "Noida · Head office", address: "307, Second Floor, G25, Sector 3, Noida 201301", phone: "+91 99534 14741" },
   ],
   hours: 'Monday – Saturday, 10:00 am – 7:00 pm IST',
 };
@@ -21,11 +19,11 @@ export const stats = [
 ];
 
 export const processSteps = [
-  { num: '01', title: 'Free counselling', description: 'A free call with a senior counsellor to understand your goal, budget and timeline.' },
-  { num: '02', title: 'Shortlist & tests', description: 'Target list locked, IELTS/GRE plan begins alongside.' },
-  { num: '03', title: 'Applications', description: 'SOP, LORs, transcripts and portal submissions handled with you.' },
-  { num: '04', title: 'Offers & funding', description: 'Compare offers, claim scholarships, arrange the loan and deposit.' },
-  { num: '05', title: 'Visa & fly', description: 'File prep, mock interview, pre-departure briefing, done.' },
+  { num: "01", title: "Profile & Counselling", description: "Start with a personalised consultation to understand your academic profile, career goals, budget and preferred timeline." },
+  { num: "02", title: "Shortlist & Test Preparation", description: "Build your university shortlist and plan the tests you need, including IELTS, TOEFL, GRE, GMAT and other requirements." },
+  { num: "03", title: "Applications & Admissions", description: "Prepare your SOP, LORs and documents, complete applications and track every submission through the admission process." },
+  { num: "04", title: "Offers, Scholarships & Funding", description: "Compare your offers, explore scholarship opportunities and get guidance on education loans and deposit requirements." },
+  { num: "05", title: "Visa & Pre-Departure", description: "Prepare your visa documents, complete interview preparation and get ready for your journey with our pre-departure guidance." },
 ];
 
 export const faqs = [

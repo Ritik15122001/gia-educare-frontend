@@ -15,7 +15,8 @@ export default function OfficesGrid() {
     <div className="section section--tight" style={{ background: 'var(--paper)', borderBlock: '1px solid var(--line)' }}>
       <div className="wrap">
         <SectionHeader center eyebrow={section.eyebrow} title={section.title} lead={section.lead} />
-        <div className="grid cols-3">
+        {/* A single office sits centred rather than alone in a three-column row. */}
+        <div className={`grid ${offices.length === 1 ? 'offices-single' : offices.length === 2 ? 'cols-2' : 'cols-3'}`}>
           {offices.map((office, i) => (
             <Reveal as="article" key={office.id || office.name} delay={i} className="card">
               <h3 className="h4">{office.name}</h3>

@@ -90,7 +90,7 @@ export default function About() {
         title={cta.title}
         lead={cta.lead}
         items={[
-          { bold: 'Gurugram · Bengaluru · Pune', text: '— walk-ins Mon–Sat, 10am to 7pm.' },
+          { bold: 'Noida head office', text: '— walk-ins Mon–Sat, 10am to 7pm.' },
           { bold: 'Remote counselling', text: 'over video for students anywhere in India or abroad.' },
           { bold: 'Parents welcome', text: 'on the call — most of the budget questions come from them anyway.' },
         ]}

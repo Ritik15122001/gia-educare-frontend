@@ -24,7 +24,13 @@ const SERVICE_LINKS = [
   { to: '/contact', label: 'Loans & scholarships' },
 ];
 
-const SOCIALS = ['instagram', 'linkedin', 'youtube', 'whatsapp'];
+const SOCIALS = ['facebook', 'instagram', 'linkedin', 'youtube', 'whatsapp'];
+
+const LEGAL_LINKS = [
+  ['privacy', 'Privacy policy'],
+  ['terms', 'Terms of service'],
+  ['refund', 'Refund policy'],
+];
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -90,18 +96,24 @@ export default function Footer() {
 
         <div className="fbot">
           <span>
-            © <span>{year}</span> {settings.brand} Education Services. All rights reserved.
+            © {year} {settings.brand}
+            {settings.legalEntity ? ` | ${settings.legalEntity}` : ''}. All Rights Reserved.
           </span>
           <ul>
-            <li>
-              <Link to="/contact">Privacy policy</Link>
-            </li>
-            <li>
-              <Link to="/contact">Terms of service</Link>
-            </li>
-            <li>
-              <Link to="/contact">Refund policy</Link>
-            </li>
+            {LEGAL_LINKS.map(([key, label]) => {
+              const href = settings.legalLinks?.[key];
+              return (
+                <li key={key}>
+                  {href ? (
+                    <a href={href} target="_blank" rel="noreferrer noopener">
+                      {label}
+                    </a>
+                  ) : (
+                    <Link to="/contact">{label}</Link>
+                  )}
+                </li>
+              );
+            })}
           </ul>
         </div>
       </div>
