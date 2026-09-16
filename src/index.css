@@ -1092,3 +1092,27 @@ a.client-tile:hover{transform:translateY(-4px);box-shadow:var(--sh-1);border-col
 .map-directions{position:absolute;right:12px;bottom:12px;background:var(--paper);color:var(--ink);font-size:.8rem;font-weight:700;padding:8px 14px;border-radius:999px;box-shadow:var(--sh-1);border:1px solid var(--line);}
 .map-directions:hover{background:var(--gold);border-color:var(--gold);}
 .offices-single{grid-template-columns:minmax(0,440px);justify-content:center;}
+
+/* ============================================================
+   MOBILE FIT
+   Phones narrower than the card's own content were clipping it:
+   a grid/flex child defaults to min-width:auto, and .btn is nowrap,
+   so a long CTA label set a floor wider than the screen. Desktop
+   rules are untouched — everything here is inside a media query.
+   ============================================================ */
+@media (max-width:720px){
+  /* let stacked columns shrink to the screen instead of their content */
+  .hero-grid>*,.split>*,.enq-band-grid>*,.fgrid>*,.finder-grid>*,.steps>*,.grid>*{min-width:0;}
+  /* long button labels wrap instead of widening the card that holds them */
+  .btn{white-space:normal;}
+  /* long emails, URLs and unbroken words stay inside their box */
+  body{overflow-wrap:break-word;}
+  /* iOS zooms the whole page when a focused field is under 16px */
+  .field input,.field select,.field textarea{font-size:16px;}
+  /* comfortable thumb targets */
+  .socials a{width:44px;height:44px;}
+  .fnav li{margin-bottom:14px;}
+  .cc-dots{gap:4px;}
+  .cc-dots button{height:8px;background-clip:content-box;padding:14px 4px;}
+  .cc-dots button.on{background-clip:content-box;}
+}
