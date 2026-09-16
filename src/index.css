@@ -1115,4 +1115,12 @@ a.client-tile:hover{transform:translateY(-4px);box-shadow:var(--sh-1);border-col
   .cc-dots{gap:4px;}
   .cc-dots button{height:8px;background-clip:content-box;padding:14px 4px;}
   .cc-dots button.on{background-clip:content-box;}
+  /* the enquiry form is taller than a phone screen, and a full panel leaves
+     almost no scrim to tap — keep the close button on screen while scrolling.
+     A backdrop-filter would make the scrim the containing block for the
+     fixed button, so drop the blur here and darken the scrim instead. */
+  .modal-scrim{backdrop-filter:none;background:rgba(8,25,47,.74);}
+  /* a filling transform animation would do the same, so fade the panel in instead */
+  .modal-panel{animation-name:fadeIn;}
+  .modal-close{position:fixed;top:calc(12px + env(safe-area-inset-top));right:12px;z-index:3;}
 }
