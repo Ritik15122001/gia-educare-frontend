@@ -377,6 +377,12 @@ body.menu-open .scrim{opacity:1;visibility:visible;}
 .course .facts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px;padding-top:16px;border-top:1px dashed var(--line);}
 .course .facts div span{display:block;font-size:.68rem;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);font-weight:700;}
 .course .facts div b{font-size:.88rem;color:var(--ink);}
+.course-actions{
+  margin-top:auto;padding-top:16px;display:grid;grid-template-columns:1fr 1fr;gap:9px;
+}
+.course-actions .btn{width:100%;padding:11px 14px;}
+@media (max-width:420px){ .course-actions{grid-template-columns:1fr;} }
+
 .course .cfoot{margin-top:16px;display:flex;justify-content:space-between;align-items:center;gap:10px;}
 
 /* filter tabs */

@@ -7,6 +7,7 @@ import DestinationDetail from './pages/Destinations/DestinationDetail';
 import Exams from './pages/Exams/Exams';
 import ExamDetail from './pages/Exams/ExamDetail';
 import Courses from './pages/Courses/Courses';
+import CourseDetail from './pages/Courses/CourseDetail';
 import About from './pages/About/About';
 import Contact from './pages/Contact/Contact';
 import Blog from './pages/Blog/Blog';
@@ -34,6 +35,7 @@ export default function App() {
           <Route path="/exams" element={<Exams />} />
           <Route path="/exams/:slug" element={<ExamDetail />} />
           <Route path="/courses" element={<Courses />} />
+          <Route path="/courses/:slug" element={<CourseDetail />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/blog" element={<Blog />} />

@@ -7,10 +7,8 @@ import WhyUsSplit from '../../components/sections/WhyUsSplit';
 import ProcessSteps from '../../components/sections/ProcessSteps';
 import TestimonialsSection from '../../components/sections/TestimonialsSection';
 import BlogPreview from '../../components/sections/BlogPreview';
-import CounsellorsCarousel from '../../components/sections/CounsellorsCarousel';
 import ClientsWall from '../../components/sections/ClientsWall';
 import VideoTestimonials from '../../components/sections/VideoTestimonials';
-import FounderConnect from '../../components/sections/FounderConnect';
 import EnquiryBand from '../../components/sections/EnquiryBand';
 import { useSection, useSettings } from '../../hooks/useContent';
 
@@ -36,12 +34,10 @@ export default function Home() {
       <ServicesSection />
       <DestinationsPreview />
       <WhyUsSplit />
-      <CounsellorsCarousel />
       <ProcessSteps />
       <TestimonialsSection />
       <VideoTestimonials />
       <BlogPreview />
-      <FounderConnect />
       <EnquiryBand
         eyebrow={cta.eyebrow}
         title={cta.title}

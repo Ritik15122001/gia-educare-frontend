@@ -1,5 +1,5 @@
 import Pill from '../common/Pill';
-import LinkArrow from '../common/LinkArrow';
+import Button from '../common/Button';
 import { useOpenEnquiry } from '../../hooks/useOpenEnquiry';
 
 export default function CourseCard({ course }) {
@@ -31,13 +31,20 @@ export default function CourseCard({ course }) {
           <b>{course.topPicks}</b>
         </div>
       </div>
-      <div className="cfoot">
-        <span className="tiny" style={{ color: 'var(--muted)' }}>
+
+      {course.note && (
+        <p className="tiny" style={{ color: 'var(--muted)', marginTop: 14 }}>
           {course.note}
-        </span>
-        <LinkArrow gold onClick={() => openEnquiry({ message: `Interested in: ${course.title}` }, 'full')}>
-          Enquire
-        </LinkArrow>
+        </p>
+      )}
+
+      <div className="course-actions">
+        <Button onClick={() => openEnquiry({ message: `Interested in: ${course.title}` }, 'full')}>
+          Enquiry
+        </Button>
+        <Button to={`/courses/${course.slug}`} variant="outline">
+          View details
+        </Button>
       </div>
     </article>
   );
