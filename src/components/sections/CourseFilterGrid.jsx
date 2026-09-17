@@ -19,7 +19,7 @@ export default function CourseFilterGrid() {
 
   return (
     <div className="section">
-      <div className="wrap">
+      <div className="wrap wrap-wide">
         <SectionHeader eyebrow={section.eyebrow} title={section.title} lead={section.lead} />
 
         <Reveal className="tabs">
@@ -34,7 +34,7 @@ export default function CourseFilterGrid() {
           ))}
         </Reveal>
 
-        <div className="grid cols-3">
+        <div className="grid courses-grid">
           {filtered.map((course) => (
             <CourseCard key={course.id} course={course} />
           ))}

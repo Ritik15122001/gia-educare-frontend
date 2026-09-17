@@ -364,6 +364,11 @@ body.menu-open .scrim{opacity:1;visibility:visible;}
 .dl dt{color:var(--muted);}
 .dl dd{margin:0;font-weight:700;color:var(--ink);text-align:right;}
 
+/* Course cards carry a lot of text, so the column count follows the
+   available width rather than being fixed at three: below ~1150px they
+   drop to two and stay readable instead of squeezing to ~310px. */
+.courses-grid{grid-template-columns:repeat(auto-fit,minmax(340px,1fr));}
+
 /* course card */
 .course{
   background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg);padding:24px;
@@ -374,7 +379,7 @@ body.menu-open .scrim{opacity:1;visibility:visible;}
 .course .cico{width:46px;height:46px;border-radius:13px;display:grid;place-items:center;font-size:1.35rem;background:linear-gradient(150deg,rgba(8,25,47,.06),rgba(8,25,47,.02));border:1px solid var(--line);}
 .course h3{font-size:1.16rem;}
 .course .desc{color:var(--muted);font-size:.88rem;margin-top:9px;flex:1;}
-.course .facts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px;padding-top:16px;border-top:1px dashed var(--line);}
+.course .facts{display:grid;grid-template-columns:1fr 1fr;gap:10px 16px;margin-top:18px;padding-top:16px;border-top:1px dashed var(--line);}
 .course .facts div span{display:block;font-size:.68rem;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);font-weight:700;}
 .course .facts div b{font-size:.88rem;color:var(--ink);}
 .course-actions{

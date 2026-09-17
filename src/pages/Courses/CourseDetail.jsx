@@ -229,7 +229,7 @@ export default function CourseDetail() {
       {/* ---------- related ---------- */}
       {related.length > 0 && (
         <Block title="Similar programs">
-          <div className="grid cols-3">
+          <div className="grid courses-grid">
             {related.map((c) => <CourseCard key={c.id} course={c} />)}
           </div>
         </Block>
