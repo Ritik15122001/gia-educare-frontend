@@ -1135,3 +1135,23 @@ a.client-tile:hover{transform:translateY(-4px);box-shadow:var(--sh-1);border-col
   .modal-panel{animation-name:fadeIn;}
   .modal-close{position:fixed;top:calc(12px + env(safe-area-inset-top));right:12px;z-index:3;}
 }
+
+/* ---------- enquiry page: form above the fold ----------
+   A full page head pushed the form off-screen, so the band is slim and the
+   supporting panel sticks alongside the (tall) form instead of leaving a
+   column of dead white space. */
+.enq-band{background:var(--ink);color:#fff;padding:18px 0 22px;}
+.enq-band .crumb{margin-bottom:10px;}
+.enq-band h1{color:#fff;font-size:clamp(1.5rem,1.15rem + 1.3vw,2.1rem);line-height:1.2;}
+.enq-band p{color:var(--muted-light);font-size:.92rem;margin-top:8px;max-width:68ch;}
+.enq-page{padding-block:22px 44px;}
+/* the band already says what this is — the form needs less of a preamble */
+.enq-page .enq-head{margin-bottom:14px;}
+.enq-page .enq-head h3{font-size:1.15rem;}
+@media (min-width:961px){ .enq-split{grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);gap:clamp(24px,3vw,44px);} }
+.enq-side{position:sticky;top:92px;}
+@media (max-width:960px){
+  .enq-side{position:static;}
+  .enq-band{padding:18px 0 22px;}
+  .enq-page{padding-block:20px 34px;}
+}

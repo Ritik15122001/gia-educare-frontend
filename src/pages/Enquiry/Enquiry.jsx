@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
-import PageHead from '../../components/layout/PageHead';
+import { Link, useLocation } from 'react-router-dom';
 import Reveal from '../../components/common/Reveal';
 import Eyebrow from '../../components/common/Eyebrow';
 import Button from '../../components/common/Button';
@@ -44,16 +43,28 @@ export default function Enquiry() {
 
   return (
     <>
-      <PageHead crumb="Free profile evaluation" title={head.title} lead={head.lead} />
-
-      <div className="section">
+      {/* Slim band, not a full page head: the form has to be reachable
+          without scrolling. */}
+      <div className="enq-band">
         <div className="wrap">
-          <div className="split" style={{ alignItems: 'start' }}>
-            <Reveal>
-              <EnquiryForm variant="full" prefill={prefill} badge="No obligation" />
-            </Reveal>
+          <div className="crumb">
+            <Link to="/">Home</Link>
+            <i>/</i>
+            <span>Free profile evaluation</span>
+          </div>
+          <h1>{head.title}</h1>
+          <p>{head.lead}</p>
+        </div>
+      </div>
 
-            <Reveal delay={1}>
+      <div className="section enq-page">
+        <div className="wrap">
+          <div className="split enq-split" style={{ alignItems: 'start' }}>
+            <div>
+              <EnquiryForm variant="full" prefill={prefill} badge="No obligation" />
+            </div>
+
+            <Reveal delay={1} className="enq-side">
               <Eyebrow>{panel.eyebrow}</Eyebrow>
               <h2 className="h2" style={{ marginBottom: 22 }}>{panel.title}</h2>
 
