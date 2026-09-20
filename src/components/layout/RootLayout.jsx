@@ -7,7 +7,6 @@ import Footer from './Footer';
 import StickyCta from './StickyCta';
 import ScrollToTopButton from './ScrollToTopButton';
 import WhatsAppFloat from './WhatsAppFloat';
-import EnquiryModal from './EnquiryModal';
 import { useScrollTracking } from '../../hooks/useScrollTracking';
 import { useMobileMenuBehavior } from '../../hooks/useMobileMenuBehavior';
 
@@ -50,7 +49,6 @@ export default function RootLayout() {
       <StickyCta />
       <ScrollToTopButton />
       <WhatsAppFloat />
-      <EnquiryModal />
     </>
   );
 }

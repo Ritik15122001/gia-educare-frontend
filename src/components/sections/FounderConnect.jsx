@@ -3,6 +3,7 @@ import Eyebrow from '../common/Eyebrow';
 import Icon from '../common/Icon';
 import SocialIcon from '../common/SocialIcon';
 import { useSection, useSettings } from '../../hooks/useContent';
+import { useImageOk } from '../../hooks/useImageOk';
 import { mailHref, telHref, whatsappHref } from '../../utils/contact';
 
 const DEFAULTS = { eyebrow: 'Founder connect', title: 'A note from our founder' };
@@ -21,6 +22,8 @@ export default function FounderConnect() {
   const settings = useSettings();
   const section = useSection('home.founder', DEFAULTS);
   const founder = settings.founder;
+  // Called before the early return below — hooks cannot be conditional.
+  const [showPhoto, onPhotoError] = useImageOk(founder?.photoUrl);
 
   if (!founder?.enabled || !founder.name) return null;
 
@@ -35,8 +38,8 @@ export default function FounderConnect() {
       <div className="wrap">
         <Reveal className="founder-card">
           <div className="founder-media">
-            {founder.photoUrl ? (
-              <img src={founder.photoUrl} alt={founder.name} loading="lazy" />
+            {showPhoto ? (
+              <img src={founder.photoUrl} alt={founder.name} loading="lazy" onError={onPhotoError} />
             ) : (
               <span className="founder-initials" aria-hidden="true">
                 {initialsOf(founder.name)}

@@ -3,15 +3,17 @@ import Reveal from '../common/Reveal';
 import Pill from '../common/Pill';
 import { formatPostDate } from '../../utils/formatDate';
 import { usePostCategories } from '../../hooks/useContent';
+import { useImageOk } from '../../hooks/useImageOk';
 
 export default function PostCard({ post, delay = 0 }) {
   const category = usePostCategories().find((c) => c.key === post.category);
+  const [showCover, onCoverError] = useImageOk(post.coverUrl);
 
   return (
     <Reveal as="article" delay={delay} className="post">
       <Link to={`/blog/${post.slug}`} className="post-cover" aria-label={post.title}>
-        {post.coverUrl ? (
-          <img src={post.coverUrl} alt="" loading="lazy" />
+        {showCover ? (
+          <img src={post.coverUrl} alt="" loading="lazy" onError={onCoverError} />
         ) : (
           // No cover set — fall back to the brand gradient rather than a gap.
           <span className="post-cover-fallback" aria-hidden="true">

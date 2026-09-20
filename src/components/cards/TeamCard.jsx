@@ -1,10 +1,13 @@
 import Reveal from '../common/Reveal';
+import { useImageOk } from '../../hooks/useImageOk';
 
 export default function TeamCard({ member, delay = 0 }) {
+  const [showPhoto, onPhotoError] = useImageOk(member.photoUrl);
+
   return (
     <Reveal as="article" delay={delay} className="team">
-      {member.photoUrl ? (
-        <img className="av av--photo" src={member.photoUrl} alt={member.name} />
+      {showPhoto ? (
+        <img className="av av--photo" src={member.photoUrl} alt={member.name} onError={onPhotoError} />
       ) : (
         <span className="av">{member.initials}</span>
       )}

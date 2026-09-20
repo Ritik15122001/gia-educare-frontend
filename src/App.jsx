@@ -10,6 +10,7 @@ import Courses from './pages/Courses/Courses';
 import CourseDetail from './pages/Courses/CourseDetail';
 import About from './pages/About/About';
 import Contact from './pages/Contact/Contact';
+import Enquiry from './pages/Enquiry/Enquiry';
 import Blog from './pages/Blog/Blog';
 import BlogPost from './pages/Blog/BlogPost';
 import { useContentStore } from './store/contentStore';
@@ -38,6 +39,7 @@ export default function App() {
           <Route path="/courses/:slug" element={<CourseDetail />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/profile-evaluation" element={<Enquiry />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="*" element={<Home />} />

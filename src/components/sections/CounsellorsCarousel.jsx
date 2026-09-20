@@ -7,6 +7,7 @@ import SocialIcon from '../common/SocialIcon';
 import { useCounsellors, useSection, useSettings } from '../../hooks/useContent';
 import { useOpenEnquiry } from '../../hooks/useOpenEnquiry';
 import { telHref, whatsappHref } from '../../utils/contact';
+import { useImageOk } from '../../hooks/useImageOk';
 
 const DEFAULTS = {
   eyebrow: 'Meet your counsellors',
@@ -20,6 +21,7 @@ const AUTOPLAY_MS = 4000;
 const initialsOf = (name = '') => name.split(/\s+/).slice(0, 2).map((w) => w[0] || '').join('').toUpperCase();
 
 function CounsellorCard({ counsellor, brand }) {
+  const [showPhoto, onPhotoError] = useImageOk(counsellor.photoUrl);
   const openEnquiry = useOpenEnquiry();
   const call = telHref(counsellor.phone);
   const whatsapp = whatsappHref(
@@ -32,8 +34,8 @@ function CounsellorCard({ counsellor, brand }) {
     <article className="cc-card">
       <div className="cc-banner" aria-hidden="true" />
       <div className="cc-body">
-        {counsellor.photoUrl ? (
-          <img className="cc-avatar" src={counsellor.photoUrl} alt={counsellor.name} loading="lazy" />
+        {showPhoto ? (
+          <img className="cc-avatar" src={counsellor.photoUrl} alt={counsellor.name} loading="lazy" onError={onPhotoError} />
         ) : (
           <span className="cc-avatar cc-avatar--initials" aria-hidden="true">
             {counsellor.initials || initialsOf(counsellor.name)}

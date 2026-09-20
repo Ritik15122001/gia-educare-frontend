@@ -70,11 +70,16 @@ import {
   Users,
   Wallet,
   HelpCircle,
+  Check,
+  ChevronUp,
 } from 'lucide-react';
 
 // Canonical icon set. These names are validated by the API and offered by the
 // admin picker — keep all three in sync or an icon renders blank on the site.
 export const ICONS = {
+  // UI chrome, not offered in the admin's content icon picker.
+  'check': Check,
+  'chevron-up': ChevronUp,
   'cap': GraduationCap,
   'school': School,
   'library': Library,
