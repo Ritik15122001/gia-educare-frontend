@@ -293,6 +293,8 @@ body.menu-open .scrim{opacity:1;visibility:visible;}
 .phone-row{display:grid;grid-template-columns:96px 1fr;gap:8px;}
 .field label.consent{display:flex;gap:10px;align-items:flex-start;font-size:.77rem;font-weight:500;letter-spacing:0;color:var(--muted);line-height:1.55;cursor:pointer;}
 .consent input{width:17px;height:17px;flex-shrink:0;margin-top:2px;accent-color:var(--gold);cursor:pointer;}
+.consent a{color:var(--ink-3);font-weight:600;text-decoration:underline;text-underline-offset:2px;}
+.consent a:hover{color:var(--gold);}
 .enq-foot{margin-top:16px;display:flex;flex-direction:column;gap:12px;}
 .enq-note{font-size:.72rem;color:var(--muted);text-align:center;}
 .enq-success{display:none;text-align:center;padding:22px 8px;}
@@ -717,6 +719,26 @@ body.modal-open{overflow:hidden;}
 @media (max-width:640px){
   .article-cta{flex-direction:column;align-items:flex-start;}
   .article-cta .btn{margin-left:0;width:100%;}
+}
+
+/* Policy pages (/privacy-policy, /terms-of-service, /refund-policy) reuse the
+   article renderer, plus a date stamp in the header and links to the siblings. */
+.legal-updated{
+  display:inline-flex;align-items:center;gap:8px;margin-top:20px;padding:7px 15px;
+  border:1px solid rgba(255,255,255,.18);border-radius:999px;background:rgba(255,255,255,.06);
+  color:var(--muted-light);font-size:.82rem;
+}
+.legal-updated svg{color:var(--gold);flex:none;}
+.legal-more{align-items:center;}
+.legal-links{display:flex;flex-wrap:wrap;gap:8px;margin-left:auto;list-style:none;}
+.legal-links a{
+  display:inline-block;padding:9px 16px;border:1px solid var(--line);border-radius:999px;
+  background:#fff;color:var(--ink-3);font-size:.86rem;font-weight:600;text-decoration:none;
+  transition:border-color .2s ease,color .2s ease;
+}
+.legal-links a:hover{border-color:var(--gold);color:var(--gold);}
+@media (max-width:640px){
+  .legal-links{margin-left:0;}
 }
 
 /* ============================================================

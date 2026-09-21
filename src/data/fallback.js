@@ -59,9 +59,9 @@ export const FALLBACK_CONTENT = {
     },
     legalEntity: "A Study Abroad Unit of HolidayAlong Hospitality LLP",
     legalLinks: {
-      privacy: "https://giaeducare.com/privacy-policy",
-      terms: "https://giaeducare.com/terms-of-service",
-      refund: "https://giaeducare.com/refund-policy",
+      privacy: '/privacy-policy',
+      terms: '/terms-of-service',
+      refund: '/refund-policy',
     },
     mapUrl: "https://maps.google.com/?q=28.580475,77.320351",
     founder: {

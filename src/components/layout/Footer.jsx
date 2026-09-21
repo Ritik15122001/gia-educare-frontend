@@ -28,10 +28,30 @@ const SERVICE_LINKS = [
 const SOCIALS = ['facebook', 'instagram', 'linkedin', 'youtube', 'whatsapp'];
 
 const LEGAL_LINKS = [
-  ['privacy', 'Privacy policy'],
-  ['terms', 'Terms of service'],
-  ['refund', 'Refund policy'],
+  ['privacy', 'Privacy policy', '/privacy-policy'],
+  ['terms', 'Terms of service', '/terms-of-service'],
+  ['refund', 'Refund policy', '/refund-policy'],
 ];
+
+/**
+ * The policy pages now live on this site, but a settings row may still hold the
+ * absolute https://giaeducare.com/... link the defaults used to ship with. Both
+ * of those should route client-side; only a link to somewhere else opens in a
+ * new tab. Returns the in-app path, or null when the link is genuinely external.
+ */
+function internalPath(href, fallback) {
+  if (!href) return fallback;
+  if (href.startsWith('/')) return href;
+  try {
+    const url = new URL(href, window.location.origin);
+    const here = window.location.hostname.replace(/^www\./, '');
+    const there = url.hostname.replace(/^www\./, '');
+    if (there === here || there === 'giaeducare.com') return `${url.pathname}${url.hash}`;
+  } catch {
+    return fallback;
+  }
+  return null;
+}
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -101,16 +121,17 @@ export default function Footer() {
             {settings.legalEntity ? ` | ${settings.legalEntity}` : ''}. All Rights Reserved.
           </span>
           <ul>
-            {LEGAL_LINKS.map(([key, label]) => {
+            {LEGAL_LINKS.map(([key, label, path]) => {
               const href = settings.legalLinks?.[key];
+              const to = internalPath(href, path);
               return (
                 <li key={key}>
-                  {href ? (
+                  {to ? (
+                    <Link to={to}>{label}</Link>
+                  ) : (
                     <a href={href} target="_blank" rel="noreferrer noopener">
                       {label}
                     </a>
-                  ) : (
-                    <Link to="/contact">{label}</Link>
                   )}
                 </li>
               );

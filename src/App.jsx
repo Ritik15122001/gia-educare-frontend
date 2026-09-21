@@ -13,6 +13,7 @@ import Contact from './pages/Contact/Contact';
 import Enquiry from './pages/Enquiry/Enquiry';
 import Blog from './pages/Blog/Blog';
 import BlogPost from './pages/Blog/BlogPost';
+import Legal from './pages/Legal/Legal';
 import { useContentStore } from './store/contentStore';
 import { captureAttribution } from './utils/attribution';
 
@@ -42,6 +43,9 @@ export default function App() {
           <Route path="/profile-evaluation" element={<Enquiry />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
+          <Route path="/privacy-policy" element={<Legal doc="privacy" />} />
+          <Route path="/terms-of-service" element={<Legal doc="terms" />} />
+          <Route path="/refund-policy" element={<Legal doc="refund" />} />
           <Route path="*" element={<Home />} />
         </Route>
       </Routes>
