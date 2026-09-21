@@ -1,8 +1,8 @@
+import { useState } from 'react';
 import Reveal from '../common/Reveal';
 import SectionHeader from '../common/SectionHeader';
 import Chk from '../common/Chk';
 import { useTeam, useSection } from '../../hooks/useContent';
-import { useImageOk } from '../../hooks/useImageOk';
 
 const initialsOf = (name = '') => name.split(/\s+/).slice(0, 2).map((w) => w[0] || '').join('').toUpperCase();
 
@@ -11,6 +11,8 @@ const DEFAULTS = {
   title: 'The People Behind GIA Educare',
   lead: 'At GIA Educare, our vision is driven by a team that combines entrepreneurship, education, technology, business development and student-focused thinking. Our leadership team works together to build a professional and student-centric platform that provides personalised guidance and structured support to students aspiring to pursue education abroad.',
 };
+
+export const LEADER_NAMES = ['Jugal Kishor Sharma', 'Mithilesh Kumar'];
 
 const LEADERS = [
   {
@@ -99,15 +101,17 @@ const LEADERS = [
   },
 ];
 
-function LeaderPhoto({ leader, src }) {
-  const [showPhoto, onPhotoError] = useImageOk(src);
+function LeaderPhoto({ leader, sources }) {
+  // Walk the candidates in order: a photo uploaded in the CRM, the bundled
+  // portrait, then initials. A dead URL on one must not hide the next.
+  const [index, setIndex] = useState(0);
+  const src = sources[index];
+  if (!src) {
+    return <div className="leader-photo"><span aria-hidden="true">{initialsOf(leader.name)}</span></div>;
+  }
   return (
     <div className="leader-photo">
-      {showPhoto ? (
-        <img src={src} alt={leader.name} loading="lazy" onError={onPhotoError} />
-      ) : (
-        <span aria-hidden="true">{initialsOf(leader.name)}</span>
-      )}
+      <img src={src} alt={leader.name} loading="lazy" onError={() => setIndex((i) => i + 1)} />
     </div>
   );
 }
@@ -129,7 +133,7 @@ export default function LeadershipTeam() {
             return (
               <Reveal as="article" className="leader" key={leader.name} delay={i}>
                 <div className="leader-head">
-                  <LeaderPhoto leader={leader} src={fromCrm || leader.photo} />
+                  <LeaderPhoto leader={leader} sources={[fromCrm, leader.photo].filter(Boolean)} />
                   <div>
                     <h3>{leader.name}</h3>
                     <p className="leader-role">{leader.role}</p>

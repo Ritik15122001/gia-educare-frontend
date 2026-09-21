@@ -1,6 +1,7 @@
 import SectionHeader from '../common/SectionHeader';
 import TeamCard from '../cards/TeamCard';
 import { useTeam, useSection } from '../../hooks/useContent';
+import { LEADER_NAMES } from './LeadershipTeam';
 
 const DEFAULTS = {
   eyebrow: 'The team',
@@ -9,7 +10,8 @@ const DEFAULTS = {
 };
 
 export default function TeamGrid() {
-  const team = useTeam();
+  // The leadership profiles above already cover these people.
+  const team = useTeam().filter((m) => !LEADER_NAMES.some((n) => n.toLowerCase() === (m.name || '').trim().toLowerCase()));
   const section = useSection('about.team', DEFAULTS);
 
   if (!team.length) return null;

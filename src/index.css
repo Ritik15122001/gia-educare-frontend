@@ -1179,3 +1179,14 @@ a.client-tile:hover{transform:translateY(-4px);box-shadow:var(--sh-1);border-col
   .leader-head{gap:14px;}
   .leader-photo{width:86px;height:104px;font-size:1.2rem;}
 }
+
+/* ---------- enquiry band: the CTA card ----------
+   The card sits on the navy band, which sets color:#fff — so its own text has
+   to state its colours or it renders white on white. */
+.enq-band .enq--cta{color:var(--text);text-align:left;padding-top:clamp(26px,2.6vw,32px);}
+.enq-band .enq--cta h3{color:var(--ink);font-size:1.22rem;}
+.enq-band .enq--cta .enq-head{margin-bottom:16px;}
+.enq-band .enq--cta .enq-head p,.enq-band .enq--cta .enq-note{color:var(--muted);}
+.cta-points{display:grid;gap:10px;margin:0 0 20px;padding:16px 0 0;border-top:1px solid var(--line);}
+.cta-points li{display:flex;gap:10px;align-items:center;font-size:.88rem;color:var(--ink-3);font-weight:600;}
+.enq-band .enq--cta .enq-note{text-align:center;}

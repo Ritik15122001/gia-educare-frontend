@@ -14,6 +14,7 @@ export default function EnquiryBand({
   prefill,
   ctaTitle = 'Ready when you are',
   ctaLabel = 'Request my free callback',
+  ctaPoints = ['Free profile evaluation', 'Shortlist matched to your budget', 'One counsellor, start to finish'],
   extra,
 }) {
   const openEnquiry = useOpenEnquiry();
@@ -41,11 +42,20 @@ export default function EnquiryBand({
             {extra}
           </Reveal>
 
-          <Reveal delay={2} className="enq enq--onDark" style={{ textAlign: 'center' }}>
-            <div className="enq-head" style={{ textAlign: 'center' }}>
+          <Reveal delay={2} className="enq enq--cta">
+            <span className="enq-badge">No obligation</span>
+            <div className="enq-head">
               <h3>{ctaTitle}</h3>
               <p>Takes 40 seconds. A senior counsellor replies within one working day.</p>
             </div>
+            <ul className="cta-points">
+              {ctaPoints.map((point) => (
+                <li key={point}>
+                  <Tick />
+                  <span>{point}</span>
+                </li>
+              ))}
+            </ul>
             <div className="enq-foot">
               <Button block size="lg" arrow onClick={() => openEnquiry(prefill, formVariant)}>
                 {ctaLabel}
