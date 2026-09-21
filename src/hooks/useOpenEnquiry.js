@@ -1,12 +1,17 @@
-import { useNavigate } from 'react-router-dom';
+import { useUiStore } from '../store/uiStore';
+import { useEnquiryStore } from '../store/enquiryStore';
 
-export const ENQUIRY_PATH = '/profile-evaluation';
-
-// One call sends the visitor to the enquiry page from anywhere: a nav CTA, a
-// course card, a destination band. Any prefill (a course title, a counsellor's
-// name) travels in router state and lands in the form on the other side.
-// Kept as a hook with the old signature so every call site works unchanged.
+// One call opens the global enquiry modal from anywhere: a nav CTA, a course
+// card, a destination band. Optionally hands it prefill fields and which
+// form variant ('compact' | 'full') to render.
 export function useOpenEnquiry() {
-  const navigate = useNavigate();
-  return (prefill) => navigate(ENQUIRY_PATH, { state: prefill ? { prefill } : undefined });
+  const openModal = useUiStore((s) => s.openEnquiryModal);
+  const setPrefill = useEnquiryStore((s) => s.setPrefill);
+  const setModalVariant = useEnquiryStore((s) => s.setModalVariant);
+
+  return (prefill, variant = 'compact') => {
+    setPrefill(prefill || null);
+    setModalVariant(variant);
+    openModal();
+  };
 }

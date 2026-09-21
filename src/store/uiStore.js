@@ -5,4 +5,8 @@ export const useUiStore = create((set) => ({
   openMobileMenu: () => set({ mobileMenuOpen: true }),
   closeMobileMenu: () => set({ mobileMenuOpen: false }),
   toggleMobileMenu: () => set((s) => ({ mobileMenuOpen: !s.mobileMenuOpen })),
+
+  enquiryModalOpen: false,
+  openEnquiryModal: () => set({ enquiryModalOpen: true }),
+  closeEnquiryModal: () => set({ enquiryModalOpen: false }),
 }));
