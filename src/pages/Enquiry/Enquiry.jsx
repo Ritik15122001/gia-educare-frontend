@@ -8,7 +8,7 @@ import Icon from '../../components/common/Icon';
 import SocialIcon from '../../components/common/SocialIcon';
 import EnquiryForm from '../../components/forms/EnquiryForm';
 import { useSection, useSettings } from '../../hooks/useContent';
-import { telHref, whatsappHref } from '../../utils/contact';
+import { telHref, whatsappHref, waTarget } from '../../utils/contact';
 
 const HEAD = {
   title: 'Get your free profile evaluation',
@@ -89,7 +89,7 @@ export default function Enquiry() {
                   <p>{settings.hours}</p>
                   <div className="hero-actions" style={{ marginTop: 14 }}>
                     <Button variant="outline" href={telHref(phone)}>Call {phone}</Button>
-                    <Button variant="outline" href={whatsappHref(whatsappNumber, WHATSAPP_MESSAGE)}>
+                    <Button variant="outline" href={whatsappHref(whatsappNumber, WHATSAPP_MESSAGE)} target={waTarget()} rel="noreferrer noopener">
                       <SocialIcon name="whatsapp" size={17} /> WhatsApp
                     </Button>
                   </div>

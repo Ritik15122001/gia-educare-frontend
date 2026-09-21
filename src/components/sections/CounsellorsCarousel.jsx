@@ -6,7 +6,7 @@ import Icon from '../common/Icon';
 import SocialIcon from '../common/SocialIcon';
 import { useCounsellors, useSection, useSettings } from '../../hooks/useContent';
 import { useOpenEnquiry } from '../../hooks/useOpenEnquiry';
-import { telHref, whatsappHref } from '../../utils/contact';
+import { telHref, whatsappHref, waTarget } from '../../utils/contact';
 import { useImageOk } from '../../hooks/useImageOk';
 
 const DEFAULTS = {
@@ -78,7 +78,7 @@ function CounsellorCard({ counsellor, brand }) {
             </a>
           )}
           {whatsapp && (
-            <a className="btn btn--whatsapp" href={whatsapp} target="_blank" rel="noreferrer noopener" aria-label={`WhatsApp ${counsellor.name}`}>
+            <a className="btn btn--whatsapp" href={whatsapp} target={waTarget()} rel="noreferrer noopener" aria-label={`WhatsApp ${counsellor.name}`}>
               <SocialIcon name="whatsapp" size={16} /> WhatsApp
             </a>
           )}

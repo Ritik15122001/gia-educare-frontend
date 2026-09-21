@@ -13,4 +13,12 @@ export const whatsappHref = (value, text) => {
   return `https://wa.me/${digits}${text ? `?text=${encodeURIComponent(text)}` : ''}`;
 };
 
+/**
+ * Where a WhatsApp link should open. On a phone the tap hands off to the
+ * WhatsApp app and the new tab is left behind empty, so keep those in the
+ * same tab; on desktop a new tab for WhatsApp Web is what people expect.
+ */
+export const waTarget = () =>
+  (typeof window !== 'undefined' && window.matchMedia?.('(pointer: coarse)').matches ? '_self' : '_blank');
+
 export const mailHref = (value, subject) => (value ? `mailto:${value}${subject ? `?subject=${encodeURIComponent(subject)}` : ''}` : '');

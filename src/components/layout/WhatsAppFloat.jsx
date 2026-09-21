@@ -1,6 +1,6 @@
 import SocialIcon from '../common/SocialIcon';
 import { useSettings } from '../../hooks/useContent';
-import { whatsappHref } from '../../utils/contact';
+import { whatsappHref, waTarget } from '../../utils/contact';
 
 const MESSAGE = "Hi GIA Educare, I'd like to know more about studying abroad.";
 
@@ -15,7 +15,7 @@ export default function WhatsAppFloat() {
   if (!href) return null;
 
   return (
-    <a className="wa-float" href={href} target="_blank" rel="noreferrer noopener" aria-label="Chat with us on WhatsApp">
+    <a className="wa-float" href={href} target={waTarget()} rel="noreferrer noopener" aria-label="Chat with us on WhatsApp">
       <SocialIcon name="whatsapp" size={28} />
       <span className="wa-float-label">Chat with us</span>
     </a>

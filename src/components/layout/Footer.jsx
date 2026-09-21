@@ -3,6 +3,7 @@ import Logo from '../common/Logo';
 import Button from '../common/Button';
 import SocialIcon from '../common/SocialIcon';
 import { useOpenEnquiry } from '../../hooks/useOpenEnquiry';
+import { waTarget } from '../../utils/contact';
 import { useSettings } from '../../hooks/useContent';
 
 const EXPLORE_LINKS = [
@@ -47,7 +48,7 @@ export default function Footer() {
             <p>{settings.footerBlurb}</p>
             <div className="socials">
               {SOCIALS.filter((name) => socials[name]).map((name) => (
-                <a href={socials[name]} key={name} aria-label={name} target="_blank" rel="noreferrer noopener">
+                <a href={socials[name]} key={name} aria-label={name} target={name === 'whatsapp' ? waTarget() : '_blank'} rel="noreferrer noopener">
                   <SocialIcon name={name} />
                 </a>
               ))}

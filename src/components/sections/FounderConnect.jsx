@@ -4,7 +4,7 @@ import Icon from '../common/Icon';
 import SocialIcon from '../common/SocialIcon';
 import { useSection, useSettings } from '../../hooks/useContent';
 import { useImageOk } from '../../hooks/useImageOk';
-import { mailHref, telHref, whatsappHref } from '../../utils/contact';
+import { mailHref, telHref, whatsappHref, waTarget } from '../../utils/contact';
 
 const DEFAULTS = { eyebrow: 'Founder connect', title: 'A note from our founder' };
 
@@ -62,7 +62,7 @@ export default function FounderConnect() {
             {(whatsapp || email || call) && (
               <div className="founder-actions">
                 {whatsapp && (
-                  <a className="btn btn--whatsapp" href={whatsapp} target="_blank" rel="noreferrer noopener">
+                  <a className="btn btn--whatsapp" href={whatsapp} target={waTarget()} rel="noreferrer noopener">
                     <SocialIcon name="whatsapp" size={16} /> Message {firstName}
                   </a>
                 )}
@@ -83,7 +83,7 @@ export default function FounderConnect() {
               <div className="founder-socials">
                 <span>Follow {firstName}</span>
                 {socials.map(([key, label]) => (
-                  <a key={key} href={founder[key]} target="_blank" rel="noreferrer noopener" aria-label={`${founder.name} on ${label}`} title={label}>
+                  <a key={key} href={founder[key]} target={key === 'whatsapp' ? waTarget() : '_blank'} rel="noreferrer noopener" aria-label={`${founder.name} on ${label}`} title={label}>
                     <SocialIcon name={key} size={16} />
                   </a>
                 ))}
