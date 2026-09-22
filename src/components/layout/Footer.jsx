@@ -16,13 +16,17 @@ const EXPLORE_LINKS = [
   { to: '/contact', label: 'Contact' },
 ];
 
+// Each service points at the page that actually covers it. The two with no
+// page of their own deep-link to the home sections that describe them —
+// #services for the service cards, #process for the five-step journey.
 const SERVICE_LINKS = [
-  { to: '/contact', label: 'Profile evaluation' },
+  { to: '/profile-evaluation', label: 'Profile evaluation' },
   { to: '/courses', label: 'University shortlisting' },
-  { to: '/contact', label: 'SOP & LOR editing' },
-  { to: '/contact', label: 'IELTS / GRE prep' },
-  { to: '/contact', label: 'Visa & documentation' },
-  { to: '/contact', label: 'Loans & scholarships' },
+  { to: '/blog?category=applications', label: 'Applications & admissions' },
+  { to: '/#services', label: 'SOP, LOR & essays' },
+  { to: '/exams', label: 'IELTS / TOEFL / GRE prep' },
+  { to: '/#process', label: 'Visa & documentation' },
+  { to: '/blog?category=finances', label: 'Loans & scholarships' },
 ];
 
 const SOCIALS = ['facebook', 'instagram', 'linkedin', 'youtube', 'whatsapp'];

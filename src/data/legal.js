@@ -4,361 +4,939 @@
  *
  * The bodies are markdown, rendered by `utils/markdown.jsx` — the same renderer
  * blog posts use — so they pick up the existing `.article` styles and never go
- * through dangerouslySetInnerHTML. The page header (title + lead) is also a
- * section key, so an editor can reword the intro from the CRM without a deploy;
- * the body deliberately stays in code because it is a legal document and should
- * change through review, not through a text box.
- *
- * `{brand}`, `{entity}`, `{email}`, `{phone}` and `{address}` are substituted
- * from live site settings at render time, so a change in Settings → Legal &
- * location flows through all three documents.
+ * through dangerouslySetInnerHTML. The wording is the approved legal text and
+ * is held verbatim here rather than in the database: only the page header
+ * (title + lead) is a section key the CRM can reword, because a legal document
+ * should change through review, not through a text box.
  */
 
 export const LEGAL_UPDATED = '22 September 2026';
 
+// Repeated verbatim in the contact clause of all three documents.
+const SIGNATURE = '**GIA Educare** — A Study Abroad Unit of HolidayAlong Hospitality LLP';
+
+const CONTACT = `
+${SIGNATURE}
+
+**Registered Office:** 308, 3rd Floor, Aggarwal Tower, IP Extension, New Delhi – 110092, India
+
+**Corporate Office:** 307, Second Floor, G25, Sector 3, Noida, Uttar Pradesh – 201301, India
+
+Website: [www.giaeducare.com](https://www.giaeducare.com)
+
+Email: [info@giaeducare.com](mailto:info@giaeducare.com)
+`;
+
 const privacy = `
-We are **{brand}**, {entity}. This policy explains what we collect when you use
-{site}, why we collect it, who we share it with, and the choices you have. It
-applies to our website, our enquiry forms, and the counselling we provide over
-phone, email and WhatsApp.
+## 1. Introduction
 
-## 1. Information we collect
+Welcome to GIA Educare ("GIA Educare", "we", "us", or "our").
 
-**Information you give us.** When you submit an enquiry, book a profile
-evaluation or contact us, we ask for your name, email address, phone number, the
-destination and course you are considering, the entrance test you have taken or
-plan to take, your budget range, and anything you write in the message box.
+GIA Educare is a study-abroad education and counselling service that assists students with overseas education counselling, university and course selection, applications, admissions, documentation, and related services.
 
-**Information you share during counselling.** If you go ahead with an
-application, we collect the documents the process needs — academic transcripts
-and certificates, test scorecards, passport details, work experience letters,
-financial and loan documents, and your statement of purpose and
-recommendations.
+GIA Educare is a study-abroad unit of HolidayAlong Hospitality LLP.
 
-**Information collected automatically.** When you submit a form we record your
-IP address and browser user-agent alongside the enquiry as a basic anti-abuse
-measure. If you arrive through a referral link or a campaign, we store the
-referral code, the campaign parameters and the referring website in your
-browser's local storage for **30 days**, and attach them to any enquiry you send
-in that window, so we know which channel introduced us.
+This Privacy Policy explains how we collect, use, store, disclose, and protect personal information when you visit our website, submit an enquiry, communicate with us, or use our counselling and study-abroad services.
 
-We do **not** collect payment card details on this website. Any fee you pay is
-collected offline or through a payment provider that handles the card data
-itself.
+By using our website or services, you acknowledge that you have read and understood this Privacy Policy.
 
-## 2. Why we use it
+## 2. Information We Collect
 
-- To respond to your enquiry and give you counselling, shortlists and timelines.
-- To prepare, submit and follow up on applications to universities and colleges on your instruction.
-- To send you the confirmation of your enquiry, updates on your application, and reminders about deadlines.
-- To keep an internal record of your file so any counsellor on your case has context.
-- To improve our services and understand which channels our students come from.
-- To meet legal, accounting and record-keeping obligations.
+Depending on the services you use, we may collect the following categories of information:
 
-We rely on your consent for marketing messages, and on the performance of our
-engagement with you or our legitimate interest in running the practice for
-everything else.
+### A. Personal Information
 
-## 3. Who we share it with
+This may include:
 
-- **Universities, colleges and their authorised representatives**, where you have asked us to apply or to seek information on your behalf. Some of these are outside India, so an application necessarily transfers your details to that country.
-- **Test bodies, accommodation providers, insurers, forex and loan partners**, only where you have asked us to arrange or introduce that service.
-- **Visa authorities and appointed visa application centres**, where a submission requires it.
-- **Service providers who run our systems** — hosting, database, email delivery and communication tools — under confidentiality obligations and only to the extent needed to run those systems.
-- **Authorities**, where the law or a valid legal process requires disclosure.
+- Full name
+- Date of birth
+- Gender
+- Nationality
+- Residential address
+- Email address
+- Mobile/WhatsApp number
+- Emergency contact details
+- Passport details
+- Government-issued identification details
 
-**We do not sell your personal data, and we do not rent or trade your contact
-details to other consultancies or advertisers.**
+### B. Academic Information
 
-## 4. Cookies and local storage
+For counselling and admission purposes, we may collect:
 
-The website uses browser storage rather than advertising cookies. We store your
-referral and campaign attribution for 30 days, as described above, and short-
-lived values needed for the enquiry form and the security challenge that
-protects it. Our admin system uses a strictly necessary cookie to keep staff
-signed in; it is never set on a visitor's browser.
+- Educational qualifications
+- School/college/university details
+- Marks, grades and transcripts
+- Academic certificates
+- Course preferences
+- Study destination preferences
+- English-language test scores such as IELTS, TOEFL or PTE
+- Other entrance or eligibility test scores
 
-Pages that embed a map are served from Google Maps, and clicking a WhatsApp or
-social link takes you to that company's platform. Those services set their own
-cookies under their own policies, which we do not control.
+### C. Financial and Application Information
 
-## 5. How long we keep it
+Where required for an application or visa-related service, we may collect information such as:
 
-- **Enquiries that do not proceed:** up to 24 months from your last contact with us, so we can pick up the conversation if you come back for a later intake.
-- **Student files where an application was made:** up to 7 years, because admission, visa and financial records may need to be produced later.
-- **Accounting records:** as long as Indian tax and company law requires.
-- **Delivery logs for automated emails:** 90 days.
+- Financial documents
+- Bank statements or financial evidence
+- Sponsorship details
+- Employment information
+- Income-related documents
+- Scholarship information
+- Application-related documents
 
-When a retention period ends we delete the record or anonymise it so it can no
-longer identify you.
+### D. Documents and Supporting Information
 
-## 6. How we protect it
+Students may voluntarily provide documents required for counselling, admission or application processing, including:
 
-Access to student files is restricted by role, so a counsellor sees the files
-assigned to them rather than the whole database. Staff passwords are stored
-hashed, sessions expire, and administrative access is logged. Data is
-transmitted over encrypted connections. No system is perfect, and we will tell
-you and the relevant authority without undue delay if a breach is likely to
-affect you.
+- Passport copies
+- Academic certificates
+- Mark sheets/transcripts
+- Resume/CV
+- Statement of Purpose (SOP)
+- Letters of Recommendation (LOR)
+- Experience certificates
+- Language test certificates
+- Photographs
+- Financial documents
+- Visa-related documents
 
-## 7. Your choices
+### E. Technical Information
 
-You can ask us to:
+When you visit our website, certain information may be automatically collected, including:
 
-- **See** a copy of the personal data we hold about you.
-- **Correct** anything that is wrong or out of date.
-- **Delete** your data, where we are not required to keep it.
-- **Stop marketing** to you — every promotional email has an unsubscribe link, and you can reply STOP to messages or simply tell your counsellor.
-- **Withdraw consent** you gave earlier, without affecting what we did lawfully before you withdrew it.
+- IP address
+- Browser type
+- Device type
+- Operating system
+- Website pages visited
+- Date and time of access
+- Referring website
+- General website usage information
 
-Write to **{email}** and we will respond within 30 days. We may ask you to
-confirm your identity first.
+## 3. How We Collect Information
 
-## 8. Children
+We may collect information through:
 
-Our services are aimed at students planning higher education. If you are under
-18, please use this website with a parent or guardian, and have them submit the
-enquiry with you. We do not knowingly collect data from children under 13.
+- Website enquiry and registration forms
+- Counselling forms
+- WhatsApp, phone calls, email and other communications
+- Direct interactions with our counsellors
+- Online application forms
+- Documents submitted by students
+- University or education-partner application systems
+- Marketing campaigns and lead-generation platforms
+- Cookies and similar technologies
+- Events, seminars, webinars and education fairs
 
-## 9. Changes to this policy
+We may also receive information from a parent, guardian, authorised representative, referral partner, or other person acting on your behalf.
 
-We update this page when our practices change. The date at the top always shows
-the current version, and material changes will be notified to active students by
-email.
+## 4. How We Use Your Information
 
-## 10. Contact us
+We may use personal information for legitimate business and service-related purposes, including:
 
-- **{brand}** — {entity}
-- {address}
-- Email: [{email}](mailto:{email})
-- Phone: [{phone}](tel:{phoneDigits})
+- Providing education and career counselling
+- Understanding your study-abroad requirements
+- Recommending suitable courses, institutions and destinations
+- Assessing eligibility for courses and institutions
+- Processing university and college applications
+- Communicating with universities and education partners
+- Preparing and submitting application documents
+- Assisting with admission procedures
+- Assisting with visa-related processes where such services are provided
+- Communicating application updates
+- Scheduling counselling sessions
+- Responding to enquiries
+- Providing customer support
+- Processing payments where applicable
+- Maintaining records
+- Improving our services and website
+- Sending service-related notifications
+- Sending relevant educational or promotional communications, subject to applicable law
+- Preventing fraud, misuse or unauthorised activity
+- Complying with applicable legal and regulatory requirements
+
+## 5. Sharing of Information
+
+GIA Educare does not sell your personal information as a product to third parties.
+
+However, information may need to be shared with appropriate parties when necessary to provide our services.
+
+These may include:
+
+**Universities and Educational Institutions.** Your information and documents may be shared with universities, colleges, schools and other educational institutions for admission and application purposes.
+
+**Education Partners and Service Providers.** We may share relevant information with authorised education partners, application platforms, technology providers, document-processing providers, communication providers and other service providers assisting us in delivering our services.
+
+**Visa and Immigration Service Providers.** Where you have requested visa or immigration-related assistance, relevant information may be shared with authorised visa service providers or other parties involved in the application process.
+
+**Legal and Government Authorities.** We may disclose information where required by applicable law, regulation, court order, governmental authority or legal process.
+
+**Business Transactions.** If GIA Educare or its associated business undergoes a merger, restructuring, acquisition, sale of assets or similar transaction, personal information may be transferred as part of that transaction, subject to applicable law.
+
+## 6. International Data Transfers
+
+Because study-abroad applications involve educational institutions and service providers located in different countries, your information may be transferred to or accessed from countries outside India.
+
+Such transfers may occur where necessary for:
+
+- University applications
+- Admission processing
+- Student services
+- Visa-related processing
+- Communication with overseas educational institutions
+- Other services specifically requested by you
+
+We take reasonable steps to ensure that personal information is handled in accordance with applicable privacy and data-protection requirements.
+
+## 7. Consent
+
+Where required by applicable law, we may obtain your consent before collecting, using or sharing personal information for specific purposes.
+
+By voluntarily submitting information through our website or communicating with GIA Educare, you acknowledge that the information provided may be used for the purposes described in this Privacy Policy and for providing the services requested by you.
+
+You may withdraw consent where applicable. Withdrawal of consent may affect our ability to provide certain services that require the relevant information.
+
+## 8. Marketing and Communications
+
+If you provide your contact details, we may contact you regarding:
+
+- Study-abroad opportunities
+- University and course updates
+- Admission deadlines
+- Scholarships
+- Education events
+- Webinars
+- Counselling services
+- Promotional offers
+- Other relevant GIA Educare services
+
+You may request to stop receiving promotional communications at any time.
+
+Service-related communications, such as application updates, important notices or information necessary to provide requested services, may continue where permitted by law.
+
+## 9. Cookies and Tracking Technologies
+
+Our website may use cookies and similar technologies to improve functionality, security and user experience.
+
+Cookies may be used to:
+
+- Remember user preferences
+- Understand website usage
+- Improve website performance
+- Analyse traffic
+- Support marketing activities
+- Measure advertising effectiveness
+
+You may configure your browser to refuse or restrict cookies. However, disabling certain cookies may affect some website functionality.
+
+Where required, we will obtain appropriate consent for cookies and similar technologies.
+
+## 10. Data Security
+
+We take reasonable technical and organisational measures to protect personal information against:
+
+- Unauthorised access
+- Unauthorised disclosure
+- Accidental loss
+- Misuse
+- Alteration
+- Destruction
+
+However, no method of electronic transmission or storage can be guaranteed to be completely secure.
+
+Students are also responsible for maintaining the confidentiality of passwords, account credentials and other login information associated with their accounts or applications.
+
+## 11. Data Retention
+
+We retain personal information only for as long as reasonably necessary for the purposes for which it was collected, including:
+
+- Providing requested services
+- Processing applications
+- Maintaining business and service records
+- Resolving disputes
+- Meeting contractual obligations
+- Complying with legal, regulatory and accounting requirements
+- Protecting our legitimate business interests
+
+When personal information is no longer required, we may securely delete, anonymise or otherwise dispose of it in accordance with applicable law.
+
+## 12. Third-Party Websites and Services
+
+Our website may contain links to third-party websites, including university websites, educational institutions, payment providers, social-media platforms and other external services.
+
+GIA Educare is not responsible for the privacy practices, security, content or policies of third-party websites.
+
+We encourage users to review the privacy policies of third-party websites before providing personal information.
+
+## 13. Children's Privacy
+
+Our services may involve students who are under the age of 18.
+
+Where a student is a minor, information may need to be provided or processed with the involvement or consent of a parent or legal guardian, where required by applicable law.
+
+If you believe that a minor has provided personal information without appropriate consent, please contact us so that we can review the matter and take appropriate action.
+
+## 14. Accuracy of Information
+
+Students and users are responsible for ensuring that information and documents provided to GIA Educare are accurate, complete and up to date.
+
+Providing incorrect, incomplete, misleading or fraudulent information may affect an application or service and may result in rejection, delay or other consequences.
+
+GIA Educare is not responsible for consequences arising from inaccurate or incomplete information supplied by a user.
+
+## 15. Your Rights
+
+Subject to applicable laws and regulations, you may have rights relating to your personal information, including the right to:
+
+- Request access to personal information held by us
+- Request correction of inaccurate or incomplete information
+- Request deletion of information where legally permissible
+- Withdraw consent where processing is based on consent
+- Request information regarding how your personal information is being processed
+- Raise a privacy-related concern or complaint
+
+Certain rights may be subject to legal, contractual or operational limitations.
+
+To exercise a privacy-related right, please contact us using the details provided below.
+
+## 16. Third-Party Service Providers
+
+We may engage third-party service providers to support our operations, including:
+
+- Website hosting providers
+- CRM and communication platforms
+- Cloud-storage providers
+- Payment service providers
+- Analytics providers
+- Marketing platforms
+- Email and messaging providers
+- Application-processing platforms
+- IT and security service providers
+
+Such service providers may access personal information only to the extent reasonably necessary to perform their services, subject to applicable contractual and legal requirements.
+
+## 17. Changes to This Privacy Policy
+
+We may update this Privacy Policy from time to time to reflect changes in:
+
+- Our services
+- Technology
+- Legal requirements
+- Regulatory requirements
+- Business practices
+
+The updated Privacy Policy will be published on our website with the revised "Last Updated" date.
+
+We encourage users to review this Privacy Policy periodically.
+
+## 18. Contact Us
+
+If you have questions, concerns, requests or complaints regarding this Privacy Policy or the handling of your personal information, please contact us.
+${CONTACT}
+## 19. Grievance Redressal
+
+For any privacy-related concern, complaint or request, you may contact GIA Educare using the contact details provided above.
+
+We will review and address privacy-related requests in accordance with applicable laws and our internal procedures.
+
+Privacy / Grievance Contact: [info@giaeducare.com](mailto:info@giaeducare.com)
+
+## 20. Acceptance
+
+By using the GIA Educare website and submitting information to us, you acknowledge that you have read and understood this Privacy Policy and agree to the processing of your information for the purposes described herein, subject to applicable law.
+
+${SIGNATURE}
 `;
 
 const terms = `
-These terms govern your use of {site} and the counselling and application
-support provided by **{brand}**, {entity}. By using this website or engaging our
-counsellors, you accept them. If you do not agree, please do not use the
-service.
+## 1. Introduction
 
-## 1. What we do
+Welcome to GIA Educare ("GIA Educare", "we", "us", or "our").
 
-We are an independent education consultancy. We evaluate your profile, help you
-shortlist countries, universities and courses, guide you through applications,
-documentation, scholarships, loans and visas, and support you up to departure.
+GIA Educare is a study-abroad education and counselling service that assists students with overseas education counselling, course and university selection, admission applications, documentation, and related services.
 
-We act as your adviser and representative. We are **not** a university, a
-government body, a visa authority or an immigration agent, and we do not make
-admission, scholarship or visa decisions.
+GIA Educare is a study-abroad unit of HolidayAlong Hospitality LLP.
 
-## 2. No guarantee of outcome
+These Terms of Service ("Terms") govern your access to and use of the GIA Educare website, services, counselling, communication channels and related services.
 
-Admission, scholarship, loan and visa decisions rest entirely with the
-institution, lender or authority concerned, and are made against criteria they
-control and may change without notice.
+By accessing our website, submitting an enquiry, registering with us, or using our services, you agree to these Terms.
 
-Nothing said by a counsellor, written on this website, or included in a
-shortlist is a promise or guarantee of admission, of a specific scholarship
-amount, of a loan sanction, of a visa, or of any job, salary, internship or
-post-study work outcome. Estimates of tuition, living costs, timelines and
-chances are informed opinions based on the information you have given us and the
-rules as they stand on the date we give them.
+If you do not agree with these Terms, please do not use our website or services.
 
-## 3. Your responsibilities
+## 2. Nature of Our Services
+
+GIA Educare provides education-related counselling and support services, which may include:
+
+- Study-abroad counselling
+- Course and university selection
+- Country and destination guidance
+- Eligibility assessment
+- Application assistance
+- University and college application processing
+- Documentation guidance
+- Statement of Purpose (SOP) and application support
+- Scholarship guidance
+- English-language test guidance
+- Admission process assistance
+- Pre-departure guidance
+- Visa application assistance, where offered
+- Other education-related support services
+
+The specific services provided to a student may vary depending on the student's requirements, destination, institution and applicable service arrangement.
+
+## 3. No Guarantee of Admission or Visa
+
+GIA Educare provides counselling and application-support services but does not guarantee admission, scholarship approval, visa approval, immigration clearance or any particular outcome.
+
+Admission decisions are made independently by universities, colleges and educational institutions.
+
+Visa and immigration decisions are made by the relevant government authorities, embassies, consulates or immigration authorities.
+
+Factors outside GIA Educare's control may affect an application, including:
+
+- Academic eligibility
+- Availability of courses or seats
+- University admission policies
+- Application deadlines
+- Changes in institutional requirements
+- Financial circumstances
+- Immigration rules
+- Visa requirements
+- Documentation
+- Previous visa history
+- Government decisions
+- Changes in policies or regulations
+
+Any discussion regarding the likelihood of admission, scholarship or visa approval is guidance only and should not be treated as a guarantee.
+
+## 4. Student Responsibilities
+
+Students are responsible for providing accurate, complete and genuine information and documents.
 
 You agree to:
 
-- Give us **complete, accurate and genuine** information and documents.
-- Tell us promptly if anything changes — a new test score, a visa refusal, a change of plan, a change of contact details.
-- Meet the deadlines, interviews, test dates and appointments we schedule with you.
-- Pay the fees charged by universities, test bodies, visa authorities and other third parties directly and on time.
-- Read what you sign, including every university offer and loan document.
+- Provide accurate personal and academic information
+- Provide genuine documents
+- Inform GIA Educare about relevant changes in your circumstances
+- Meet application and payment deadlines
+- Respond to requests for documents or information within reasonable time
+- Review applications and documents before submission
+- Follow university, government and visa requirements
+- Maintain copies of submitted documents
+- Provide truthful information in all applications and declarations
 
-**Submitting a forged, altered or misrepresented document is your
-responsibility alone.** We will stop work immediately on discovering one, we
-will not refund fees already earned, and we accept no liability for the refusal,
-ban or legal consequence that follows.
+GIA Educare shall not be responsible for consequences arising from false, misleading, incomplete or inaccurate information supplied by a student.
 
-## 4. Free and paid services
+## 5. Application Processing
 
-Profile evaluation, country and university shortlisting and the first
-counselling session are **free and carry no obligation**.
+Where GIA Educare assists with an application, the student understands that:
 
-Optional paid services — coaching for entrance tests, premium application
-handling and similar — are priced in writing and confirmed by you before any
-work starts or any payment is taken. Third-party charges such as university
-application fees, test fees, visa fees, medicals, biometrics, courier and
-attestation charges are **not** part of our fee and are payable by you to those
-organisations.
+1. Final responsibility for the accuracy of the application rests with the student.
+2. Applications may be submitted only after receiving the required information and documents.
+3. Submission of an application does not guarantee admission.
+4. Universities and institutions may request additional information or documents.
+5. Application deadlines are subject to the policies of the relevant institution.
+6. GIA Educare is not responsible for delays caused by universities, government authorities, third-party platforms, courier services, payment providers or other external parties.
 
-Fees quoted are in Indian Rupees and, unless stated otherwise, exclude
-applicable taxes. Refunds are governed by our Refund policy.
+Students should carefully review important information before authorising submission.
 
-## 5. Communication and consent
+## 6. University and Course Information
 
-By submitting an enquiry you agree that we may contact you by phone, SMS,
-WhatsApp and email about your enquiry and your application — including where
-your number is registered on a Do Not Disturb list, for the limited purpose of
-servicing the enquiry you sent us. You can opt out of promotional messages at
-any time; we will still send you messages that concern an application in
-progress.
+GIA Educare may provide information regarding universities, colleges, courses, tuition fees, scholarships, entry requirements, accommodation, living costs and other study-abroad matters.
 
-## 6. Website use
+Such information may change from time to time.
 
-You may use this website for your own study-abroad research. You may not scrape
-it, copy it wholesale, attempt to break into it, interfere with the enquiry form
-or the security challenge that protects it, or use it to send unsolicited or
-unlawful content.
+While we make reasonable efforts to provide useful and current information, GIA Educare does not guarantee that all third-party information will remain accurate, complete or unchanged.
 
-## 7. Intellectual property
+Students should verify final requirements, fees, deadlines and conditions directly with the relevant institution or authority where appropriate.
 
-The name, logo, text, layout, graphics, guides and comparison data on this site
-belong to us or to our licensors and are protected by Indian and international
-copyright law. You may share links and quote short passages with attribution.
-Republishing our content, in whole or as a rebadged version, is not permitted
-without written permission.
+## 7. Fees and Payments
 
-## 8. Third-party links and content
+Certain GIA Educare services may be subject to service fees, application charges or other costs.
 
-We link to universities, test bodies, government pages, lenders and other
-resources for your convenience. We do not control them, we do not endorse
-everything they say, and we are not responsible for their content, their
-accuracy or their handling of your data. Fees, deadlines and eligibility rules
-published by third parties change frequently — always confirm them on the
-official source before you act.
+Before proceeding with a paid service, the applicable charges and payment terms may be communicated to the student.
 
-## 9. Limitation of liability
+Depending on the service, additional charges may be payable directly to third parties, including:
 
-To the extent permitted by law, our total liability arising out of or connected
-with our services is limited to the professional fees you have actually paid us
-for the service in question. We are not liable for indirect or consequential
-loss, including lost opportunity, lost intake, travel or accommodation costs,
-currency movements, or loss caused by a third party's decision, delay or error.
+- Universities and educational institutions
+- Examination bodies
+- Visa authorities
+- Embassies or consulates
+- Application platforms
+- Courier companies
+- Insurance providers
+- Accommodation providers
+- Other third-party service providers
 
-Nothing in these terms excludes liability that cannot lawfully be excluded.
+Unless specifically stated otherwise, third-party charges are separate from GIA Educare service fees.
 
-## 10. Ending the engagement
+## 8. Refunds and Cancellation
 
-You may stop using our services at any time by telling us in writing. We may end
-an engagement if the information you have given is false, if you ask us to do
-something unlawful or unethical, if agreed fees remain unpaid, or if the
-relationship has broken down. On termination we will hand back your original
-documents and confirm the status of every application in progress.
+Refund eligibility, if applicable, will depend on the specific service purchased and the applicable refund or cancellation terms communicated to the student.
 
-## 11. Governing law
+Fees paid to universities, examination bodies, visa authorities, government authorities or other third parties may be non-refundable and are subject to the policies of those respective organisations.
 
-These terms are governed by the laws of India. The courts at Gautam Buddh Nagar,
-Uttar Pradesh have exclusive jurisdiction over any dispute, and we ask that you
-raise the issue with us first — most things are resolved in a phone call.
+Where GIA Educare has already performed services, commenced application processing, prepared documentation or incurred third-party costs, the applicable amount may not be refundable.
 
-## 12. Changes
+Any specific refund commitment must be confirmed in writing by GIA Educare.
 
-We may update these terms. The version published on this page on the date you
-use the service is the one that applies.
+## 9. Visa and Immigration Services
 
-## 13. Contact us
+Where visa-related assistance is provided, GIA Educare may assist with documentation, application preparation and general procedural guidance.
 
-- **{brand}** — {entity}
-- {address}
-- Email: [{email}](mailto:{email})
-- Phone: [{phone}](tel:{phoneDigits})
+However:
+
+- GIA Educare does not control visa decisions.
+- Visa approval is determined by the relevant authority.
+- No visa outcome can be guaranteed.
+- Students are responsible for providing genuine and complete information.
+- Government rules and requirements may change without notice.
+- Visa fees and government charges are subject to the relevant authority's policies.
+
+Students should not rely solely on informal advice and may be required to comply with instructions issued directly by the relevant government authority.
+
+## 10. Third-Party Services
+
+GIA Educare may work with or refer students to third-party organisations, including:
+
+- Universities
+- Colleges
+- Education providers
+- Test-preparation providers
+- Visa service providers
+- Accommodation providers
+- Insurance providers
+- Travel service providers
+- Payment providers
+- Technology and application platforms
+
+Third-party services are governed by the terms and policies of the respective provider.
+
+GIA Educare is not responsible for the independent acts, omissions, policies, decisions or service quality of third-party providers.
+
+## 11. Website Use
+
+You agree to use the GIA Educare website only for lawful purposes.
+
+You must not:
+
+- Use the website for fraudulent or unlawful purposes
+- Provide false or misleading information
+- Attempt to gain unauthorised access to systems
+- Interfere with website security
+- Introduce malicious software
+- Copy or reproduce website content without permission
+- Use automated systems to misuse or overload the website
+- Attempt to access another person's account or information
+- Use the website in a manner that may damage GIA Educare or its users
+
+We reserve the right to restrict or terminate access where we reasonably believe these Terms have been violated.
+
+## 12. Intellectual Property
+
+Unless otherwise stated, all content appearing on the GIA Educare website, including:
+
+- Logos
+- Brand names
+- Text
+- Graphics
+- Images
+- Designs
+- Videos
+- Website layouts
+- Marketing materials
+- Written content
+
+is owned by or licensed to GIA Educare, HolidayAlong Hospitality LLP, or the respective rights holder.
+
+You may not reproduce, modify, distribute, publish, sell, transmit or commercially exploit such content without prior written permission.
+
+## 13. User-Submitted Content
+
+Where users submit reviews, testimonials, feedback, photographs or other content to GIA Educare, you confirm that:
+
+- You have the right to provide such content.
+- The content does not violate the rights of another person.
+- The content is not unlawful or misleading.
+
+Where appropriate and subject to applicable law, GIA Educare may use submitted testimonials or feedback for marketing and promotional purposes.
+
+## 14. Communications
+
+By submitting an enquiry or registering for our services, you may receive communications from GIA Educare through:
+
+- Phone
+- Email
+- WhatsApp
+- SMS
+- Other digital communication channels
+
+These communications may relate to your enquiry, application, counselling, admission process, service updates, events or relevant educational opportunities.
+
+You may request to stop receiving promotional communications.
+
+Service-related communications may continue where necessary to provide requested services.
+
+## 15. Privacy
+
+Your use of GIA Educare's services is also subject to our [Privacy Policy](/privacy-policy), which explains how we collect, use, store and share personal information.
+
+By using our services, you acknowledge that you have read and understood the applicable Privacy Policy.
+
+## 16. Website Availability
+
+We aim to keep the GIA Educare website available and functioning properly.
+
+However, we do not guarantee that the website will always be:
+
+- Available without interruption
+- Free from technical errors
+- Free from viruses or other harmful components
+- Compatible with every device or browser
+
+Website availability may be affected by maintenance, technical issues, hosting problems, internet disruptions or circumstances beyond our reasonable control.
+
+## 17. Limitation of Liability
+
+To the extent permitted by applicable law, GIA Educare shall not be responsible for losses arising from matters beyond our reasonable control, including:
+
+- University admission decisions
+- Visa or immigration decisions
+- Changes in government regulations
+- Changes in university policies
+- Rejection of applications
+- Delays caused by third parties
+- Incorrect information supplied by students
+- Failure by students to meet deadlines
+- Technical failures of third-party systems
+- Third-party service provider actions
+- Events beyond our reasonable control
+
+Nothing in these Terms excludes or limits any liability that cannot legally be excluded or limited under applicable law.
+
+## 18. Force Majeure
+
+GIA Educare shall not be responsible for delays or failure to perform its obligations where such delay or failure results from circumstances beyond its reasonable control.
+
+Such circumstances may include:
+
+- Natural disasters
+- War
+- Terrorism
+- Epidemics or pandemics
+- Government restrictions
+- Strikes
+- Civil unrest
+- Internet or telecommunications failures
+- Cybersecurity incidents
+- Government or regulatory actions
+- Changes in immigration or education policies
+- Other unforeseen events beyond reasonable control
+
+## 19. Changes to Services
+
+GIA Educare reserves the right to modify, suspend or discontinue any part of its website or services where reasonably necessary.
+
+This may include changes to:
+
+- Counselling services
+- Application-support services
+- Website features
+- Service fees
+- Partner institutions
+- Communication channels
+- Available destinations
+
+Changes will not affect rights or obligations that have already accrued unless permitted by applicable law or agreed otherwise.
+
+## 20. Changes to These Terms
+
+We may update these Terms from time to time.
+
+Updated Terms will be published on this page with a revised "Last Updated" date.
+
+Your continued use of the website or services after the updated Terms are published may constitute acceptance of the revised Terms, subject to applicable law.
+
+## 21. Governing Law and Jurisdiction
+
+These Terms shall be governed by and interpreted in accordance with the laws applicable in India.
+
+Subject to applicable law, disputes arising in connection with these Terms or the services provided by GIA Educare shall be subject to the jurisdiction of the competent courts in New Delhi, India.
+
+Nothing in this clause prevents a consumer from exercising any mandatory rights or remedies available under applicable law.
+
+## 22. Contact Information
+
+For questions regarding these Terms or GIA Educare's services, please contact us.
+${CONTACT}
+## 23. Acceptance of Terms
+
+By accessing the GIA Educare website, submitting an enquiry, registering for counselling, or using our services, you confirm that you have read, understood and agreed to these Terms of Service.
+
+If you do not agree with these Terms, please discontinue use of the website and services.
+
+${SIGNATURE}
 `;
 
 const refund = `
-This policy explains what is refundable, what is not, and how long a refund
-takes. It applies to fees paid to **{brand}**, {entity}, and should be read with
-our Terms of service.
+## 1. Introduction
 
-## 1. Free services stay free
+This Refund & Cancellation Policy ("Policy") applies to services provided by GIA Educare, a study-abroad unit of HolidayAlong Hospitality LLP ("GIA Educare", "we", "us", or "our").
 
-Profile evaluation, country and university shortlisting, and your first
-counselling session cost nothing. There is no fee to refund and no obligation to
-continue with any paid service. If anyone asks you to pay for these, tell us at
-**{email}**.
+GIA Educare provides study-abroad counselling, university and course selection assistance, admission application support, documentation guidance and other education-related services.
 
-## 2. What you may pay for
+By purchasing or using our services, you acknowledge that you have read, understood and agreed to this Policy.
 
-Our paid services are optional, quoted in writing, and confirmed by you before
-work begins. They may include entrance-test coaching, premium application
-handling, and documentation support.
+## 2. No Refund Policy
 
-Separately, you will pay **third parties** directly — university application
-fees, tuition and deposits, entrance-test fees, visa and biometric fees,
-medicals, translation, attestation and courier charges.
+All service fees paid to GIA Educare are strictly non-refundable.
 
-## 3. Third-party fees are not refundable by us
+Once a student, parent, guardian or authorised representative makes a payment for any GIA Educare service, the payment is considered final and no refund shall be provided, irrespective of whether the student subsequently decides not to proceed with the service or application.
 
-We do not hold, and cannot return, money paid to a university, a test body, a
-visa authority, a lender or a courier. Those are governed by that
-organisation's own refund rules, and most application, test and visa fees are
-non-refundable once submitted. Where a refund is possible — a tuition deposit
-after a deferral or a visa refusal, for example — we will help you file the
-claim and follow it up, but the decision and the timeline belong to that
-institution.
+This includes situations where:
 
-## 4. Refunds on our professional fees
+- The student changes their mind.
+- The student decides not to study abroad.
+- The student changes their preferred country, university or course.
+- The student postpones their study plans.
+- The student chooses another education consultant or service provider.
+- The student does not provide the required documents.
+- The student fails to respond to communications.
+- The student misses an application deadline.
+- The student becomes ineligible for a particular course or institution.
+- The student's circumstances change after payment.
+- The student does not proceed with an application after counselling or service commencement.
+- The student is unable or unwilling to continue with the process.
 
-**Before work starts.** Cancel in writing within **7 days** of payment and
-before we have begun work on your file, and you get a **full refund**.
+Accordingly, all payments made towards GIA Educare's service fees are non-refundable.
 
-**After work starts.** Once we have begun — shortlisting, drafting your
-statement of purpose, preparing or submitting applications — we refund the
-portion of the fee for milestones not yet delivered, after deducting work
-already completed and any non-refundable costs we have paid out on your behalf.
-We will send you a written breakdown of what has been delivered.
+## 3. Service Commencement
 
-**Once applications are submitted.** Professional fees for an application that
-has been submitted are **not refundable**, because the work has been performed.
+GIA Educare may begin providing services immediately after receiving payment, including:
 
-**Coaching and test preparation.** Refundable on a pro-rata basis for sessions
-not yet attended, if you cancel before the halfway point of the batch. Study
-material already issued and any registration component are not refundable. After
-the halfway point, no refund is due, but we will transfer your remaining
-sessions to a later batch once, free of charge.
+- Counselling
+- Profile evaluation
+- Course or university research
+- University shortlisting
+- Application preparation
+- Documentation review
+- Application processing
+- Communication with institutions
+- Application submission
+- Follow-up and coordination
+- Other services agreed with the student
 
-## 5. Situations where no refund is due
+Because these services may involve professional time, research, administrative work and resources, the corresponding service fee becomes non-refundable once payment has been received.
 
-- An admission, scholarship, loan or **visa application is refused**. Those decisions are not ours to make, and our fee is for the work done, not for the outcome — see clause 2 of our Terms of service.
-- You gave **incorrect, incomplete, forged or misrepresented** information or documents.
-- You **missed a deadline, interview, test or appointment** we scheduled and confirmed with you.
-- You **changed your plan**, destination or intake after applications were submitted.
-- You engaged **another consultant** in parallel for the same application without telling us.
-- Services that have been **fully delivered**.
+## 4. Admission Rejection
 
-## 6. Cancellation by us
+GIA Educare does not guarantee admission to any university, college or educational institution.
 
-If we cancel an engagement for a reason that is ours — we cannot service your
-case, or we discontinue a batch — you receive a **full refund of the undelivered
-portion**, with no deduction.
+If an application is rejected by a university or institution, no refund of GIA Educare's service fee will be provided.
 
-## 7. How to request a refund
+Admission decisions are made independently by the respective educational institution.
 
-1. Email **{email}** from the address on your file, with the subject "Refund request".
-2. Include your full name, phone number, the service paid for, the payment date, the amount, and the payment reference or receipt.
-3. Tell us briefly why you are asking.
+A rejection does not constitute a failure to provide the counselling or application-support services purchased by the student.
 
-We acknowledge every request within **3 working days** and give you a written
-decision, with the calculation, within **10 working days**.
+## 5. Visa Rejection
 
-## 8. How refunds are paid
+Where GIA Educare provides visa-related assistance, visa decisions remain entirely with the relevant embassy, consulate, immigration authority or government department.
 
-Approved refunds are paid in Indian Rupees to the **original payment method or
-the bank account the payment came from**, within **15 working days** of
-approval. We do not refund to a third party's account. Bank charges, payment-
-gateway charges and any applicable taxes already remitted are deducted. Your
-bank may take a few extra days to credit the amount.
+If a student's visa application is:
 
-## 9. If you disagree with the decision
+- Rejected
+- Refused
+- Delayed
+- Withdrawn
+- Cancelled
+- Returned
+- Subject to additional requirements
 
-Write back to **{email}** within 15 days with your reasons and we will have the
-file reviewed by someone who was not involved in the original decision. If it
-still cannot be resolved, clause 11 of our Terms of service applies.
+GIA Educare's service fee shall remain non-refundable.
 
-## 10. Contact us
+Payment of a service fee does not constitute a guarantee of visa approval.
 
-- **{brand}** — {entity}
-- {address}
-- Email: [{email}](mailto:{email})
-- Phone: [{phone}](tel:{phoneDigits})
+## 6. University, Government and Third-Party Fees
+
+Fees paid to third parties are separate from GIA Educare's professional/service fees.
+
+These may include:
+
+- University application fees
+- Tuition fees
+- Deposit payments
+- Visa fees
+- Embassy or consular fees
+- Immigration fees
+- Examination fees
+- English-language test fees
+- Courier charges
+- Insurance fees
+- Accommodation fees
+- Application-platform charges
+- Other government or third-party charges
+
+Such fees are subject to the refund and cancellation policies of the respective institution or service provider.
+
+GIA Educare does not guarantee a refund of any third-party payment.
+
+Where a third party provides a refund, such refund shall be governed by that third party's applicable policy and shall not automatically create any obligation for GIA Educare to refund its own service fees.
+
+## 7. Student Cancellation
+
+If a student decides to discontinue the services after making payment, the student may inform GIA Educare in writing.
+
+However, cancellation by the student will not entitle the student to a refund of any amount paid to GIA Educare.
+
+Any work already performed, including counselling, profile assessment, university shortlisting, application preparation, documentation review or application processing, will not be refundable.
+
+## 8. Non-Submission of Documents
+
+Students are responsible for providing the documents and information required for their application.
+
+If a student fails to provide the required documents within the applicable timeframe, the application or service may be delayed or discontinued.
+
+No refund will be provided due to non-submission, late submission or incomplete submission of documents by the student.
+
+## 9. Missed Deadlines
+
+Students are responsible for complying with university, examination, visa and other applicable deadlines.
+
+If an application cannot be submitted because the student:
+
+- Missed a deadline
+- Failed to provide documents on time
+- Failed to respond to requests
+- Provided incomplete information
+- Provided incorrect information
+
+the applicable GIA Educare service fee shall remain non-refundable.
+
+## 10. Change of University, Course or Destination
+
+A student may request a change of:
+
+- Country
+- University
+- College
+- Course
+- Intake
+- Study destination
+
+Such changes may be subject to additional terms, availability and service charges.
+
+A change of preference does not create an entitlement to a refund of previously paid service fees.
+
+Any additional work or services requested by the student may be charged separately where applicable.
+
+## 11. Deferral or Change of Intake
+
+If a student chooses to defer their admission or move to a different intake, the original service fee shall remain non-refundable.
+
+Any additional services required for a future intake may be subject to additional charges.
+
+University or third-party deferral policies will apply separately.
+
+## 12. Scholarships
+
+GIA Educare may provide guidance regarding scholarships and funding opportunities.
+
+However, scholarship decisions are made by universities, institutions, governments or other scholarship providers.
+
+Failure to receive a scholarship does not qualify the student for a refund of GIA Educare's service fee.
+
+## 13. Offers and Discounts
+
+Promotional offers, discounts or special pricing provided by GIA Educare do not change the non-refundable nature of the service fee unless GIA Educare expressly confirms otherwise in writing.
+
+Any discounted service fee paid under a promotional offer remains subject to this Refund & Cancellation Policy.
+
+## 14. Duplicate or Incorrect Payments
+
+If a student believes that a payment has been duplicated or incorrectly charged, the student should notify GIA Educare promptly with the relevant transaction details.
+
+Any genuine duplicate payment identified by GIA Educare may be reviewed and, where appropriate, resolved in accordance with applicable payment and banking procedures.
+
+This provision does not change the general no-refund policy for GIA Educare service fees.
+
+## 15. Exceptional Circumstances
+
+GIA Educare generally does not provide refunds based on personal, financial, academic, travel, medical, family or other circumstances arising after payment.
+
+Any exceptional consideration, if provided at GIA Educare's sole discretion and where legally permissible, shall not establish a precedent or create an automatic entitlement to a refund.
+
+## 16. Cancellation or Non-Availability of a Service by GIA Educare
+
+If GIA Educare is unable to provide a specific service due to circumstances entirely within GIA Educare's control, the matter may be reviewed on a case-by-case basis in accordance with the applicable service arrangement and applicable law.
+
+Nothing in this Policy is intended to exclude any refund or remedy that is required by applicable law.
+
+## 17. No Refund for Outcome-Based Reasons
+
+Payment to GIA Educare is for professional counselling, guidance, processing and support services and not for a guaranteed outcome.
+
+Therefore, the following do not constitute grounds for a refund:
+
+- University rejection
+- Course rejection
+- Scholarship rejection
+- Visa rejection
+- Visa delay
+- Change in immigration rules
+- Change in university requirements
+- Failure to meet eligibility criteria
+- Change in tuition fees
+- Change in exchange rates
+- Change in personal circumstances
+- Failure to obtain the desired outcome
+
+## 18. Refund Request Procedure
+
+Because GIA Educare follows a no-refund policy, refund requests will generally not be accepted.
+
+Where a user believes that a payment has been made in error, duplicated, or otherwise requires review, the user may contact us with:
+
+- Full name
+- Registered mobile number
+- Email address
+- Payment date
+- Transaction/reference number
+- Amount paid
+- Reason for the request
+
+GIA Educare will review the request where appropriate.
+
+Submission of a request does not guarantee a refund.
+
+## 19. Chargebacks and Payment Disputes
+
+Students are requested to contact GIA Educare directly before initiating a payment dispute or chargeback with their bank or payment provider.
+
+Unauthorised or fraudulent chargebacks may be investigated and may result in suspension of services while the matter is reviewed.
+
+This provision does not limit any rights available to consumers under applicable law.
+
+## 20. Acceptance of This Policy
+
+By making a payment to GIA Educare or using our services, you confirm that:
+
+1. You have read and understood this Refund & Cancellation Policy.
+2. You understand that GIA Educare service fees are non-refundable.
+3. You understand that admission and visa outcomes are not guaranteed.
+4. You understand that third-party fees are governed by the respective third party's policies.
+5. You agree to the terms contained in this Policy.
+
+## 21. Contact Us
+
+For questions regarding this Refund & Cancellation Policy, please contact:
+${CONTACT}
+## 22. Policy Updates
+
+GIA Educare reserves the right to modify this Refund & Cancellation Policy from time to time.
+
+Any updated version will be published on the GIA Educare website with the revised "Last Updated" date.
+
+${SIGNATURE}
 `;
 
 export const LEGAL_DOCS = {
@@ -368,7 +946,7 @@ export const LEGAL_DOCS = {
     sectionKey: 'legal.privacy',
     head: {
       title: 'Privacy |policy',
-      lead: 'What we collect when you enquire, why we collect it, who it is shared with, and how to have it removed.',
+      lead: 'How GIA Educare collects, uses, stores, shares and protects your personal information when you enquire with us or use our counselling and study-abroad services.',
     },
     body: privacy,
   },
@@ -378,7 +956,7 @@ export const LEGAL_DOCS = {
     sectionKey: 'legal.terms',
     head: {
       title: 'Terms of |service',
-      lead: 'The rules of the engagement — what we do, what we do not promise, what we expect from you, and how disputes are handled.',
+      lead: 'The terms that govern your use of the GIA Educare website, our counselling and our application-support services.',
     },
     body: terms,
   },
@@ -387,8 +965,8 @@ export const LEGAL_DOCS = {
     crumb: 'Refund policy',
     sectionKey: 'legal.refund',
     head: {
-      title: 'Refund |policy',
-      lead: 'What is refundable, what is not, how to raise a request, and how long the money takes to come back.',
+      title: 'Refund & cancellation |policy',
+      lead: 'How service fees, cancellations and third-party charges are treated when you buy or use a GIA Educare service.',
     },
     body: refund,
   },

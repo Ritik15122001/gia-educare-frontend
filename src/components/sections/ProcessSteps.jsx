@@ -13,7 +13,7 @@ export default function ProcessSteps() {
   const section = useSection('home.process', DEFAULTS);
 
   return (
-    <div className="section section--tight" style={{ background: 'var(--paper)', borderBlock: '1px solid var(--line)' }}>
+    <div className="section section--tight" id="process" style={{ background: 'var(--paper)', borderBlock: '1px solid var(--line)' }}>
       <div className="wrap">
         <SectionHeader center eyebrow={section.eyebrow} title={section.title} lead={section.lead} />
         <div className="steps">

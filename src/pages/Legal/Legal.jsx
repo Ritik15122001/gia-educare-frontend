@@ -7,30 +7,6 @@ import { renderMarkdown } from '../../utils/markdown';
 import { useSection, useSettings, splitAccent } from '../../hooks/useContent';
 import { LEGAL_DOCS, LEGAL_ORDER, LEGAL_UPDATED } from '../../data/legal';
 
-// The documents are written with {brand}-style placeholders so one edit in
-// Settings → Legal & location updates the contact block and the trading name in
-// all three of them.
-function fill(body, settings) {
-  const email = settings.emailPrimary || 'info@giaeducare.com';
-  const phone = settings.phonePrimary || '';
-  // The live hostname, so the documents name the site they are served from —
-  // but never "localhost" or an IP from a dev or preview build.
-  const host = typeof window === 'undefined' ? '' : window.location.hostname.replace(/^www\./, '');
-  const site = /^(localhost$|127\.|0\.0\.0\.0|\d+\.\d+\.\d+\.\d+$)/.test(host) || !host ? 'giaeducare.com' : host;
-
-  const values = {
-    brand: settings.brand || 'GIA Educare',
-    entity: settings.legalEntity || 'an independent study-abroad consultancy',
-    address: settings.addressLine || '',
-    email,
-    phone,
-    phoneDigits: phone.replace(/[^\d+]/g, ''),
-    site,
-  };
-
-  return body.replace(/\{(\w+)\}/g, (match, key) => (key in values ? values[key] : match));
-}
-
 export default function Legal({ doc }) {
   const settings = useSettings();
   const page = LEGAL_DOCS[doc];
@@ -41,7 +17,7 @@ export default function Legal({ doc }) {
     document.title = `${page.crumb} · ${settings.brand}`;
   }, [page.crumb, settings.brand]);
 
-  const content = useMemo(() => renderMarkdown(fill(page.body, settings)), [page.body, settings]);
+  const content = useMemo(() => renderMarkdown(page.body), [page.body]);
   const others = LEGAL_ORDER.filter((key) => key !== doc);
 
   return (

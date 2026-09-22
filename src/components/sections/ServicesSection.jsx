@@ -16,7 +16,7 @@ export default function ServicesSection() {
   const { before, accent, after } = splitAccent(section.title);
 
   return (
-    <div className="section">
+    <div className="section" id="services">
       <div className="wrap">
         <SectionHeader
           center
